@@ -47,6 +47,8 @@ Para realizar o teste local da api é preciso:
     >`http://localhost:8000/api/user`
 - Rota `GET` para receber a lista de Deputados Federais do Amapá
     >`http://localhost:8000/api/deputados`
+- Rota `GET` para receber a lista de despesas de um Deputado Federal do Amapá
+    >`http://localhost:8000/api/deputados/{deputado_id}/despesas`
 - Rota `POST` para cadastrar um comentário
     >`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentario`
 - Rota `POST` para cadastrar uma resposta
