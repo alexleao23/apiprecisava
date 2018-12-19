@@ -35,21 +35,21 @@ Para realizar o teste local da api é preciso:
 
 ## Enpoints da API no teste local
 
-Rota `POST` para cadastro de usuário
->`http://localhost:8000/api/register`
-Rota `POST` para fazer login
->`http://localhost:8000/api/login`
-Rota `POST` para fazer logout
->`http://localhost:8000/api/logout`
-Rota `GET` para receber o usuário logado
->`http://localhost:8000/api/user`
-Rota `GET` para receber a lista de Deputados Federais do Amapá
->`http://localhost:8000/api/deputados`
-Rota `POST` para cadastrar um comentário
->`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentario`
-Rota `POST` para cadastrar uma resposta
->`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentarios/{comentario_id}/resposta`
-Rota `GET` para receber todos os comentários de uma despesa
->`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentarios`
-Rota `GET` para receber todas as respostas de um comentario
->`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentarios/{comentario_id}/respostas`
+- Rota `POST` para cadastro de usuário
+    >`http://localhost:8000/api/register`
+- Rota `POST` para fazer login
+    >`http://localhost:8000/api/login`
+- Rota `POST` para fazer logout
+    >`http://localhost:8000/api/logout`
+- Rota `GET` para receber o usuário logado
+    >`http://localhost:8000/api/user`
+- Rota `GET` para receber a lista de Deputados Federais do Amapá
+    >`http://localhost:8000/api/deputados`
+- Rota `POST` para cadastrar um comentário
+    >`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentario`
+- Rota `POST` para cadastrar uma resposta
+    >`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentarios/{comentario_id}/resposta`
+- Rota `GET` para receber todos os comentários de uma despesa
+    >`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentarios`
+- Rota `GET` para receber todas as respostas de um comentario
+    >`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentarios/{comentario_id}/respostas`
