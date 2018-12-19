@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <img src="../../public/img/precisava.png" alt="Logo Precisava?">
+                    <img src="{{ asset('img/precisava.png') }}" alt="Logo Precisava?">
                 </div>
             </div>
         </div>
