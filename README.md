@@ -33,7 +33,7 @@ Para realizar o teste local da api é preciso:
 8. Depois inicie o servidor com o comando:
     >`php artisan serve`
 
-## Enpoints da API no teste local
+## Endpoints da API no teste local
 
 - Rota `POST` para cadastro de usuário
     >`http://localhost:8000/api/register`
