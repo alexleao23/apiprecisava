@@ -25,7 +25,9 @@ Para realizar o teste local da api é preciso:
 5. Crie um novo banco de dados vazio no MySQL.
 6. Configure as seguintes variáveis no arquivo `.env`:
     >`DB_DATABASE=your-databasename-mysql`
+    >
     >`DB_USERNAME=your-username-mysql`
+    >
     >`DB_PASSWORD=your-password-mysql`
 7. Depois rode os seguintes comandos no terminal ou bash:
     >`php artisan migrate`
