@@ -51,7 +51,11 @@ class ComentariosController extends Controller
      */
     public function store(Request $request)
     {
-        $comentario = Comentario::create($request->all());
+        $comentario = Comentario::create([
+            'usuario_id' => \Auth::user()->id,
+            'despesa_id' => $request->despesa_id,
+            'descricao' => $request->descricao
+        ]);
         return response()->json($comentario, 200);
     }
 

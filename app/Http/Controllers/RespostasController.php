@@ -41,7 +41,11 @@ class RespostasController extends Controller
      */
     public function store(Request $request)
     {
-        $resposta = Resposta::create($request->all());
+        $resposta = Resposta::create([
+            'usuario_id' => \Auth::user()->id,
+            'comentario_id' => $request->comentario_id,
+            'descricao' => $request->descricao
+        ]);
         return response()->json($resposta, 200);
     }
 
