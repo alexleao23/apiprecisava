@@ -17,16 +17,16 @@ class CreateDespesaDeputadosTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('deputado_id');
             $table->foreign('deputado_id')->references('id')->on('deputados');
-            $table->string('nome_deputado');
-            $table->string('sigla_uf');
-            $table->string('sigla_partido');
-            $table->text('descricao');
-            $table->string('fornecedor');
+            $table->string('nome_deputado')->nullable();
+            $table->string('sigla_uf')->nullable();
+            $table->string('sigla_partido')->nullable();
+            $table->text('descricao')->nullable();
+            $table->string('fornecedor')->nullable();
             $table->string('cpfcnpj_fornecedor')->nullable();
             $table->date('data_emissao')->nullable();
-            $table->string('valor_documento');
-            $table->integer('mes_documento');
-            $table->integer('ano_documento');
+            $table->string('valor_documento')->nullable();
+            $table->integer('mes_documento')->nullable();
+            $table->integer('ano_documento')->nullable();
         });
     }
 
