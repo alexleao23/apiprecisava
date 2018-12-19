@@ -34,6 +34,9 @@ Route::group(['middleware' => 'auth:api'], function(){
             // Salva um comentário enviado pelo usuário
             Route::post('comentario', 'ComentariosController@store');
 
+            // Retorna as informações de um comentário
+            Route::get('comentarios/{comentario_id}', 'ComentariosController@show');
+
             // Salva uma resposta enviada pelo usuário
             Route::post('comentarios/{comentario_id}/resposta', 'RespostasController@store');
         });

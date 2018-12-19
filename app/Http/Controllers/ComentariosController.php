@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comentario;
 use App\Models\Deputado;
+use App\Models\DespesaDeputado;
 
 class ComentariosController extends Controller
 {
@@ -15,10 +16,9 @@ class ComentariosController extends Controller
         $this->comentarios = $comentarios;
     }
 
-    public function showRespostas($deputado_id, $despesa_id, $comentario_id)
+    public function showRespostas($despesa_id, $comentario_id)
     {
-        $deputado = Deputado::find($deputado_id);
-        $despesa = $deputado->despesas->find($despesa_id);
+        $despesa = DespesaDeputado::find($despesa_id);
         $comentario = $despesa->comentarios->find($comentario_id);
         return $comentario->respostas;
 
@@ -65,9 +65,11 @@ class ComentariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($despesa_id, $comentario_id)
     {
-        //
+        $despesa = DespesaDeputado::find($despesa_id);
+        $comentario = $despesa->comentarios->find($comentario_id);
+        return $comentario;
     }
 
     /**

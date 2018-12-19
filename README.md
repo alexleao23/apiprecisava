@@ -51,6 +51,8 @@ Para realizar o teste local da api é preciso:
     >`http://localhost:8000/api/deputados/{deputado_id}/despesas`
 - Rota `POST` para cadastrar um comentário
     >`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentario`
+- Rota `GET` para receber as informações de um comentário comentário
+    >`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentarios/{comentario_id}`
 - Rota `POST` para cadastrar uma resposta
     >`http://localhost:8000/api/deputados/{deputado_id}/despesas/{despesa_id}/comentarios/{comentario_id}/resposta`
 - Rota `GET` para receber todos os comentários de uma despesa
