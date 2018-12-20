@@ -22,7 +22,7 @@ Para realizar o teste local da api é preciso:
 3. Duplique o arquivo `.env.example` e renomei a cópia para `.env`.
 4. Depois rode o comando:
     >`php artisan key:generate`
-5. Crie um novo banco de dados vazio no MySQL.
+5. Crie um novo banco de dados vazio com o nome `precisava` no MySQL.
 6. Configure as seguintes variáveis no arquivo `.env`:
     >`DB_DATABASE=your-databasename-mysql`
     >
