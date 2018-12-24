@@ -15,6 +15,7 @@ class ReacaoDespesaResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'usuario_id' => $this->usuario_id,
             'despesa_id' => $this->despesa_id,
             'reacao' => $this->reacao

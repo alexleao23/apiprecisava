@@ -15,6 +15,7 @@ class DespesaDeputadoResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'deputado_id' => $this->deputado_id,
             'nome_deputado' => $this->nome_deputado,
             'sigla_uf' => $this->sigla_uf,
