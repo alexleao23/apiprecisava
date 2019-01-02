@@ -73,9 +73,9 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function registered(Request $request, $user)
-    {
-        $user->generateToken();
-        return response($user->toArray(), 201);
-    }
+    // protected function registered(Request $request, $user)
+    // {
+    //     $user->generateToken();
+    //     return response($user->toArray(), 201);
+    // }
 }
