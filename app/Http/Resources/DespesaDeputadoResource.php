@@ -27,7 +27,7 @@ class DespesaDeputadoResource extends JsonResource
             'valor_documento' => $this->valor_documento,
             'mes_documento' => $this->mes_documento,
             'ano_documento' => $this->ano_documento,
-            'reacao' => ReacaoDespesaResource::collection(
+            'reacoes' => ReacaoDespesaResource::collection(
                 $this->reacaoDespesas->where('usuario_id', \Auth::user()->id)
             )
         ];
