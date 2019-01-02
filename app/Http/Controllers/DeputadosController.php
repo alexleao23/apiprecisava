@@ -19,7 +19,7 @@ class DeputadosController extends Controller
      */
     public function index()
     {
-        return Deputado::all();
+        return Deputado::select()->orderBy('nome_eleitoral')->get();
     }
 
     /**
