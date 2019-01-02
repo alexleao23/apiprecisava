@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth:api'], function(){
         // Lista as despesas de um Deputado Federal do Amapá
         Route::get('despesas', function($deputado_id){
             return DespesaDeputadoResource::collection(
-                DespesaDeputado::where('deputado_id', $deputado_id)->get()
+                DespesaDeputado::where('deputado_id', $deputado_id)->orderBy('descricao')->paginate(30)
             );
         });
 
