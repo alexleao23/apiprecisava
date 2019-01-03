@@ -27,16 +27,17 @@ class DeputadosController extends Controller
             }
         }
         return response()->json([
+            'deputado_id' => $deputado->id,
             'reacoes_positiva' => count($reacoesPositivas),
             'reacoes_negativas' => count($reacoesNegativas),
             'total_reacoes' => count($reacoes)
         ]);
     }
-    public function despesasDeputado($deputado_id)
-    {
-        $deputado = Deputado::find($deputado_id);
-        return $deputado->despesas;
-    }
+    // public function despesasDeputado($deputado_id)
+    // {
+    //     $deputado = Deputado::find($deputado_id);
+    //     return $deputado->despesas;
+    // }
     /**
      * Display a listing of the resource.
      *
