@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Models\DespesaDeputado;
+use App\Models\Deputado;
 use App\Http\Resources\DespesaDeputadoResource;
 
 Route::post('login', 'Auth\LoginController@login');
@@ -23,17 +24,22 @@ Route::group(['middleware' => 'auth:api'], function(){
         //Mostra informações detalhadas de um Deputado Federal do Amapá
         Route::get('', 'DeputadosController@show');
 
-        // Lista as despesas de um Deputado Federal do Amapá
+        // Lista as despesas (com as reações do usuário logado em cada despesa)
+        // de um Deputado Federal do Amapá
         Route::get('despesas', function($deputado_id){
             return DespesaDeputadoResource::collection(
-                DespesaDeputado::where('deputado_id', $deputado_id)->orderBy('descricao')->paginate(30)
+                DespesaDeputado::where('deputado_id', $deputado_id)->orderBy('data_emissao')->paginate(30)
             );
         });
+
+        // Retorna as quantidades de reações positivas e negativas
+        // e também retorna o total de reações para utilizar no ranking
+        Route::get('reacoes', 'DeputadosController@reacoes');
 
         Route::group(['prefix' => 'despesas/{despesa_id}'], function () {
             // Salva uma reação enviada pelo usuário
             Route::post('reacao', 'ReacaoDespesasController@store');
-            
+
             // Salva um comentário enviado pelo usuário
             Route::post('comentario', 'ComentariosController@store');
 

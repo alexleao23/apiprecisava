@@ -7,6 +7,31 @@ use App\Models\Deputado;
 
 class DeputadosController extends Controller
 {
+    public function reacoes () {
+        $deputado = Deputado::find($deputado_id);
+        $despesas = $deputado->despesas;
+        $reacoesPositivas = [];
+        $reacoesNegativas = [];
+        $reacoes = [];
+        foreach ($despesas as $despesa) {
+            foreach ($despesa->reacaoDespesas as $reacao) {
+                if($reacao->reacao == 1) {
+                    array_push($reacoesPositivas, $reacao);
+                }
+                if($reacao->reacao == 0) {
+                    array_push($reacoesNegativas, $reacao);
+                }
+                if(isset($reacao)) {
+                    array_push($reacoes, $reacao);
+                }
+            }
+        }
+        return response()->json([
+            'reacoes_positiva' => count($reacoesPositivas),
+            'reacoes_negativas' => count($reacoesNegativas),
+            'total_reacoes' => count($reacoes)
+        ]);
+    }
     public function despesasDeputado($deputado_id)
     {
         $deputado = Deputado::find($deputado_id);
