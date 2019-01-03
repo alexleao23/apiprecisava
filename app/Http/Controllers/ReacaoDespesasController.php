@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ReacaoDespesa;
 
 class ReacaoDespesasController extends Controller
 {
@@ -34,7 +35,12 @@ class ReacaoDespesasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reacao = ReacaoDespesa::create([
+            'usuario_id' => \Auth::user()->id,
+            'despesa_id' => $request->despesa_id,
+            'reacao' => $request->reacao
+        ]);
+        return response()->json($reacao, 200);
     }
 
     /**

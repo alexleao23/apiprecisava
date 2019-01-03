@@ -31,6 +31,9 @@ Route::group(['middleware' => 'auth:api'], function(){
         });
 
         Route::group(['prefix' => 'despesas/{despesa_id}'], function () {
+            // Salva uma reação enviada pelo usuário
+            Route::post('reacao', 'ReacaoDespesasController@store');
+            
             // Salva um comentário enviado pelo usuário
             Route::post('comentario', 'ComentariosController@store');
 
