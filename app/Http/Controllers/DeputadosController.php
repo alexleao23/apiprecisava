@@ -7,7 +7,7 @@ use App\Models\Deputado;
 
 class DeputadosController extends Controller
 {
-    public function reacoes () {
+    public function reacoes($deputado_id) {
         $deputado = Deputado::find($deputado_id);
         $despesas = $deputado->despesas;
         $reacoesPositivas = [];
