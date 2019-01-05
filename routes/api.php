@@ -19,6 +19,10 @@ Route::group(['middleware' => 'auth:api'], function(){
     // Lista todos os Deputado Federais do Amapá
     Route::get('deputados', 'DeputadosController@index');
 
+    // Retorna as quantidades de reações positivas e negativas
+    // e também retorna o total de reações para utilizar no ranking
+    Route::get('reacoes', 'DeputadosController@reacoes');
+
     Route::group(['prefix' => 'deputados/{deputado_id}'], function () {
 
         //Mostra informações detalhadas de um Deputado Federal do Amapá
@@ -31,10 +35,6 @@ Route::group(['middleware' => 'auth:api'], function(){
                 DespesaDeputado::where('deputado_id', $deputado_id)->orderBy('data_emissao')->paginate(30)
             );
         });
-
-        // Retorna as quantidades de reações positivas e negativas
-        // e também retorna o total de reações para utilizar no ranking
-        Route::get('reacoes', 'DeputadosController@reacoes');
 
         Route::group(['prefix' => 'despesas/{despesa_id}'], function () {
             // Salva uma reação enviada pelo usuário

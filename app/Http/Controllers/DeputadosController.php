@@ -7,31 +7,35 @@ use App\Models\Deputado;
 
 class DeputadosController extends Controller
 {
-    public function reacoes($deputado_id) {
-        $deputado = Deputado::find($deputado_id);
-        $despesas = $deputado->despesas;
-        $reacoesPositivas = [];
-        $reacoesNegativas = [];
-        $reacoes = [];
-        foreach ($despesas as $despesa) {
-            foreach ($despesa->reacaoDespesas as $reacao) {
-                if($reacao->reacao == 1) {
-                    array_push($reacoesPositivas, $reacao);
-                }
-                if($reacao->reacao == 0) {
-                    array_push($reacoesNegativas, $reacao);
-                }
-                if(isset($reacao)) {
-                    array_push($reacoes, $reacao);
-                }
-            }
+    public function reacoes() {
+        $deputados = Deputado::all();
+        $todasReacoes = [];
+        foreach ($deputados as $deputado) {
+          $despesas = $deputado->despesas;
+          $reacoesPositivas = [];
+          $reacoesNegativas = [];
+          $reacoes = [];
+          foreach ($despesas as $despesa) {
+              foreach ($despesa->reacaoDespesas as $reacao) {
+                  if($reacao->reacao == 1) {
+                      array_push($reacoesPositivas, $reacao);
+                  }
+                  if($reacao->reacao == 0) {
+                      array_push($reacoesNegativas, $reacao);
+                  }
+                  if(isset($reacao)) {
+                      array_push($reacoes, $reacao);
+                  }
+              }
+          }
+          array_push($todasReacoes, [
+              'deputado_id' => $deputado->id,
+              'reacoes_positiva' => count($reacoesPositivas),
+              'reacoes_negativas' => count($reacoesNegativas),
+              'total_reacoes' => count($reacoes)
+            ]);
         }
-        return response()->json([
-            'deputado_id' => $deputado->id,
-            'reacoes_positiva' => count($reacoesPositivas),
-            'reacoes_negativas' => count($reacoesNegativas),
-            'total_reacoes' => count($reacoes)
-        ]);
+      return response()->json($todasReacoes);
     }
     // public function despesasDeputado($deputado_id)
     // {
