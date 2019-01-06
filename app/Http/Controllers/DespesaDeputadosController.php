@@ -51,9 +51,11 @@ class DespesaDeputadosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($deputado_id, $despesa_id)
     {
-        //
+        $deputado = Deputado::find($deputado_id);
+        $despesa = $deputado->despesas->find($despesa_id);
+        return $despesa;
     }
 
     /**

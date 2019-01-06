@@ -30,7 +30,8 @@ class DeputadosController extends Controller
           }
           array_push($todasReacoes, [
               'deputado_id' => $deputado->id,
-              'reacoes_positiva' => count($reacoesPositivas),
+              'nome_deputado' => $deputado->nome_eleitoral,
+              'reacoes_positivas' => count($reacoesPositivas),
               'reacoes_negativas' => count($reacoesNegativas),
               'total_reacoes' => count($reacoes)
             ]);

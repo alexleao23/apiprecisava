@@ -37,6 +37,9 @@ Route::group(['middleware' => 'auth:api'], function(){
         });
 
         Route::group(['prefix' => 'despesas/{despesa_id}'], function () {
+            // Retorna as informações de uma despesa específica
+            Route::get('', 'DespesaDeputadosController@show');
+
             // Salva uma reação enviada pelo usuário
             Route::post('reacao', 'ReacaoDespesasController@store');
 
