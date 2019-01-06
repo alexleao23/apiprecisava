@@ -3,7 +3,9 @@
 use Illuminate\Http\Request;
 use App\Models\DespesaDeputado;
 use App\Models\Deputado;
+use App\Models\Comentario;
 use App\Http\Resources\DespesaDeputadoResource;
+use App\Http\Resources\ComentarioResource;
 
 Route::post('login', 'Auth\LoginController@login');
 Route::post('register', 'Auth\RegisterController@register');
@@ -55,7 +57,13 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         Route::group(['prefix' => 'despesas/{despesa_id}/comentarios'], function () {
             // Lista os comentários de uma despesa de um deputado
-            Route::get('', 'DespesaDeputadosController@showComentarios');
+            Route::get('', function($deputado_id, $despesa_id){
+                $deputado = Deputado::find($deputado_id);
+                $despesa = $deputado->despesas->find($despesa_id);
+                return ComentarioResource::collection(
+                    Comentario::where('despesa_id', $despesa->id)->orderBy('created_at')->paginate(30)
+                );
+            });
 
             // Lista as respostas de um comentário
             Route::get('{comentario_id}/respostas', 'ComentariosController@showRespostas');

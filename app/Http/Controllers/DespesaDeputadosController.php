@@ -8,12 +8,12 @@ use App\Models\Deputado;
 
 class DespesaDeputadosController extends Controller
 {
-    public function showComentarios($deputado_id, $despesa_id)
-    {
-        $deputado = Deputado::find($deputado_id);
-        $despesa = $deputado->despesas->find($despesa_id);
-        return $despesa->comentarios;
-    }
+    // public function showComentarios($deputado_id, $despesa_id)
+    // {
+    //     $deputado = Deputado::find($deputado_id);
+    //     $despesa = $deputado->despesas->find($despesa_id);
+    //     return $despesa->comentarios->sortByDesc('created_at');
+    // }
     /**
      * Display a listing of the resource.
      *
