@@ -188,7 +188,7 @@ class ComentarioRespostas extends Component {
                         <div className="row justify-content-start">
                           <div className="col-12">
                             <strong>
-                              {resposta.usuario.nome}
+                              {resposta.nome_usuario}
                             </strong>
                           </div>
                         </div>

@@ -15,11 +15,12 @@ class RespostaResource extends JsonResource
      */
     public function toArray($request)
     {
+        $user = User::find($this->usuario_id);
         return [
             'id' => $this->id,
             'comentario_id' => $this->comentario_id,
             'descricao' => $this->descricao,
-            'usuario' => User::find($this->usuario_id),
+            'nome_usuario' => $user->nome,
             'created_at' => $this->created_at
         ];
     }

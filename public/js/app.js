@@ -64814,7 +64814,7 @@ function (_Component) {
           className: "row justify-content-start"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "col-12"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, resposta.usuario.nome))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, resposta.nome_usuario))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "row justify-content-start"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "col-12"
@@ -65155,7 +65155,7 @@ function (_Component) {
           className: "row justify-content-start"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "col-12"
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, comentario.usuario.nome))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, comentario.nome_usuario))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "row justify-content-start"
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "col-12"

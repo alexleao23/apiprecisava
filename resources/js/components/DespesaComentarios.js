@@ -253,7 +253,7 @@ class DespesaComentarios extends Component {
                         <div className="row justify-content-start">
                           <div className="col-12">
                             <strong>
-                              {comentario.usuario.nome}
+                              {comentario.nome_usuario}
                             </strong>
                           </div>
                         </div>
