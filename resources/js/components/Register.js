@@ -76,15 +76,15 @@ class Register extends Component {
               <form className="text-left">
                 <div className="form-group">
                   <label>Nome</label>
-                  <input value={this.state.nome} type="text" onChange={this.handleChangeText} id="nome" className="form-control" placeholder="" />
+                  <input value={this.state.nome} type="text" onChange={this.handleChangeText} id="nome" className="form-control" placeholder="Ex: João Pereira da Silva" />
                 </div>
                 <div className="form-group">
                   <label>Data de Nascimento</label>
-                  <input value={this.state.dataNasc} onChange={this.handleChangeText} id="dataNasc" className="form-control" placeholder="" />
+                  <input value={this.state.dataNasc} onChange={this.handleChangeText} id="dataNasc" className="form-control" placeholder="Ex: 01/01/2000" />
                 </div>
                 <div className="form-group">
                   <label>E-mail</label>
-                  <input value={this.state.email} type="email" onChange={this.handleChangeText} id="email" className="form-control" placeholder="" />
+                  <input value={this.state.email} type="email" onChange={this.handleChangeText} id="email" className="form-control" placeholder="Ex: exemplo@mail.com" />
                 </div>
                 <div className="form-group">
                   <label>Senha</label>
