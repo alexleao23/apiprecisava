@@ -66506,7 +66506,7 @@ function (_Component) {
         onChange: this.handleChangeText,
         id: "nome",
         className: "form-control",
-        placeholder: ""
+        placeholder: "Ex: Jo\xE3o Pereira da Silva"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Data de Nascimento"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -66514,7 +66514,7 @@ function (_Component) {
         onChange: this.handleChangeText,
         id: "dataNasc",
         className: "form-control",
-        placeholder: ""
+        placeholder: "Ex: 01/01/2000"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "E-mail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -66523,7 +66523,7 @@ function (_Component) {
         onChange: this.handleChangeText,
         id: "email",
         className: "form-control",
-        placeholder: ""
+        placeholder: "Ex: exemplo@mail.com"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Senha"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
