@@ -176,13 +176,13 @@ class ListaDespesasDeputado extends Component {
     if(despesa.reacao_usuario != null && despesa.reacao_usuario.reacao == 1) {
       return (
         <div>
-          <button disabled style={{ marginRight: 5 }} type="button" className='btn btn-primary'>
+          <button disabled style={{ margin: 2 }} type="button" className='btn btn-primary'>
             Like
           </button>
-          <button disabled style={{ marginRight: 5 }} type="button" className='btn btn-outline-danger'>
+          <button disabled style={{ margin: 2 }} type="button" className='btn btn-outline-danger'>
             Deslike
           </button>
-          <Link className="btn btn-outline-secondary" to={`/deputado-${this.state.deputado.id}-despesa-${despesa.id}-comentarios`}>
+          <Link style={{ margin: 2 }} className="btn btn-outline-secondary" to={`/deputado-${this.state.deputado.id}-despesa-${despesa.id}-comentarios`}>
             Comentar
           </Link>
         </div>
@@ -190,13 +190,13 @@ class ListaDespesasDeputado extends Component {
     } else if(despesa.reacao_usuario != null && despesa.reacao_usuario.reacao == 0) {
       return (
         <div>
-          <button disabled style={{ marginRight: 5 }} type="button" className='btn btn-outline-primary'>
+          <button disabled style={{ margin: 2 }} type="button" className='btn btn-outline-primary'>
             Like
           </button>
-          <button disabled style={{ marginRight: 5 }} type="button" className='btn btn-danger'>
+          <button disabled style={{ margin: 2 }} type="button" className='btn btn-danger'>
             Deslike
           </button>
-          <Link className="btn btn-outline-secondary" to={`/deputado-${this.state.deputado.id}-despesa-${despesa.id}-comentarios`}>
+          <Link style={{ margin: 2 }} className="btn btn-outline-secondary" to={`/deputado-${this.state.deputado.id}-despesa-${despesa.id}-comentarios`}>
             Comentar
           </Link>
         </div>
@@ -204,13 +204,13 @@ class ListaDespesasDeputado extends Component {
     } else {
       return (
         <div>
-          <button onClick={()=>this.handleReacao(despesa.id, 1)} style={{ marginRight: 5 }} type="button" className='btn btn-outline-primary'>
+          <button onClick={()=>this.handleReacao(despesa.id, 1)} style={{ margin: 2 }} type="button" className='btn btn-outline-primary'>
             Like
           </button>
-          <button onClick={()=>this.handleReacao(despesa.id, 0)} style={{ marginRight: 5 }} type="button" className='btn btn-outline-danger'>
+          <button onClick={()=>this.handleReacao(despesa.id, 0)} style={{ margin: 2 }} type="button" className='btn btn-outline-danger'>
             Deslike
           </button>
-          <Link className="btn btn-outline-secondary" to={`/deputado-${this.state.deputado.id}-despesa-${despesa.id}-comentarios`}>
+          <Link style={{ margin: 2 }} className="btn btn-outline-secondary" to={`/deputado-${this.state.deputado.id}-despesa-${despesa.id}-comentarios`}>
             Comentar
           </Link>
         </div>
@@ -224,7 +224,7 @@ class ListaDespesasDeputado extends Component {
       return (
         <div>
           <Header />
-          <div className="card" style={{ marginTop: '6%' }}>
+          <div className="card" style={{ marginTop: '1%' }}>
             <div className="card-body text-center">
               <Spinner width={100} height={100} />
             </div>
@@ -236,7 +236,7 @@ class ListaDespesasDeputado extends Component {
     return (
       <div>
         <Header />
-          <div className="card" style={{ marginTop: '6%', marginBottom: '2%' }}>
+          <div className="card" style={{ marginTop: '1%', marginBottom: '2%' }}>
             <div className="card-header" style={{ padding: '2%' }}>
               <div className="row justify-content-center">
                 <img className="rounded float-left" src={require(`../../../public/img/deputados/${deputado.id}.jpg`)} alt={deputado.nome_eleitoral} style={{ width: 150, height: 190 }} />

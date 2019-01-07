@@ -97,7 +97,7 @@ class Ranking extends Component {
       return (
         <div>
           <Header/>
-          <div className="card" style={{ marginTop: '6%' }}>
+          <div className="card" style={{ marginTop: '1%' }}>
             <div className="card-body text-center">
               <Spinner width={100} height={100} />
             </div>
@@ -108,7 +108,7 @@ class Ranking extends Component {
     return (
       <div>
         <Header/>
-        <div className="card" style={{ marginTop: '6%', marginBottom: '2%' }}>
+        <div className="card" style={{ marginTop: '1%', marginBottom: '2%' }}>
           <div className="card-body text-center">
             <div className="row justify-content-around">
               <div className="col-md-3">

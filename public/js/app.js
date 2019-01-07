@@ -64491,10 +64491,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container-fluid",
-        style: {
-          flex: 1
-        }
+        className: "container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PrivateRoute, {
         exact: true,
         path: "/",
@@ -64746,7 +64743,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card",
           style: {
-            marginTop: '6%'
+            marginTop: '1%'
           }
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card-body text-center"
@@ -64759,7 +64756,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card",
         style: {
-          marginTop: '6%',
+          marginTop: '1%',
           marginBottom: '2%'
         }
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -65083,7 +65080,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card",
           style: {
-            marginTop: '6%'
+            marginTop: '1%'
           }
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card-body text-center"
@@ -65096,7 +65093,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card",
         style: {
-          marginTop: '6%',
+          marginTop: '1%',
           marginBottom: '2%'
         }
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -65275,7 +65272,7 @@ function (_Component) {
       }
 
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
-        className: "navbar fixed-top navbar-expand-lg navbar-light navbar-laravel",
+        className: "navbar navbar-expand-lg navbar-light navbar-laravel",
         style: {
           borderRadius: '5px'
         }
@@ -65481,7 +65478,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card",
           style: {
-            marginTop: '6%'
+            marginTop: '1%'
           }
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card-body text-center"
@@ -65494,7 +65491,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card",
         style: {
-          marginTop: '6%',
+          marginTop: '1%',
           marginBottom: '2%'
         }
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -65507,7 +65504,7 @@ function (_Component) {
         className: "row justify-content-center"
       }, this.state.deputados.map(function (deputado) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "col-md-3",
+          className: "col-sm-6 col-md-3",
           key: deputado.id
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/deputado-".concat(deputado.id, "-despesas"),
@@ -65796,18 +65793,21 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           disabled: true,
           style: {
-            marginRight: 5
+            margin: 2
           },
           type: "button",
           className: "btn btn-primary"
         }, "Like"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           disabled: true,
           style: {
-            marginRight: 5
+            margin: 2
           },
           type: "button",
           className: "btn btn-outline-danger"
         }, "Deslike"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          style: {
+            margin: 2
+          },
           className: "btn btn-outline-secondary",
           to: "/deputado-".concat(this.state.deputado.id, "-despesa-").concat(despesa.id, "-comentarios")
         }, "Comentar"));
@@ -65815,18 +65815,21 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           disabled: true,
           style: {
-            marginRight: 5
+            margin: 2
           },
           type: "button",
           className: "btn btn-outline-primary"
         }, "Like"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           disabled: true,
           style: {
-            marginRight: 5
+            margin: 2
           },
           type: "button",
           className: "btn btn-danger"
         }, "Deslike"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          style: {
+            margin: 2
+          },
           className: "btn btn-outline-secondary",
           to: "/deputado-".concat(this.state.deputado.id, "-despesa-").concat(despesa.id, "-comentarios")
         }, "Comentar"));
@@ -65836,7 +65839,7 @@ function (_Component) {
             return _this5.handleReacao(despesa.id, 1);
           },
           style: {
-            marginRight: 5
+            margin: 2
           },
           type: "button",
           className: "btn btn-outline-primary"
@@ -65845,11 +65848,14 @@ function (_Component) {
             return _this5.handleReacao(despesa.id, 0);
           },
           style: {
-            marginRight: 5
+            margin: 2
           },
           type: "button",
           className: "btn btn-outline-danger"
         }, "Deslike"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          style: {
+            margin: 2
+          },
           className: "btn btn-outline-secondary",
           to: "/deputado-".concat(this.state.deputado.id, "-despesa-").concat(despesa.id, "-comentarios")
         }, "Comentar"));
@@ -65866,7 +65872,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card",
           style: {
-            marginTop: '6%'
+            marginTop: '1%'
           }
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card-body text-center"
@@ -65879,7 +65885,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card",
         style: {
-          marginTop: '6%',
+          marginTop: '1%',
           marginBottom: '2%'
         }
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -66312,7 +66318,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card",
           style: {
-            marginTop: '6%'
+            marginTop: '1%'
           }
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card-body text-center"
@@ -66325,7 +66331,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card",
         style: {
-          marginTop: '6%',
+          marginTop: '1%',
           marginBottom: '2%'
         }
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {

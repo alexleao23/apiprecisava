@@ -37,7 +37,7 @@ class Header extends Component {
     }
     return (
       <nav
-        className='navbar fixed-top navbar-expand-lg navbar-light navbar-laravel'
+        className='navbar navbar-expand-lg navbar-light navbar-laravel'
         style={{
           borderRadius: '5px'
         }}

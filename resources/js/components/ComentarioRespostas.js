@@ -147,7 +147,7 @@ class ComentarioRespostas extends Component {
       return (
         <div>
           <Header />
-          <div className="card" style={{ marginTop: '6%' }}>
+          <div className="card" style={{ marginTop: '1%' }}>
             <div className="card-body text-center">
               <Spinner width={100} height={100} />
             </div>
@@ -158,7 +158,7 @@ class ComentarioRespostas extends Component {
     return (
       <div>
         <Header />
-          <div className="card" style={{ marginTop: '6%', marginBottom: '2%' }}>
+          <div className="card" style={{ marginTop: '1%', marginBottom: '2%' }}>
             <div className="card-header text-center" style={{ padding: '2%' }}>
               <h3 className="text-center">
                 Comentário de {comentario.nome_usuario}

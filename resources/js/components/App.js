@@ -43,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container-fluid" style={{ flex: 1 }}>
+        <div className="container-fluid">
           <Switch>
             <PrivateRoute exact path='/' component={Home} />
             <PrivateRoute exact path='/deputado-:deputadoId-despesas' component={ListaDespesasDeputado} />
