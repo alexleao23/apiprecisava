@@ -10,8 +10,7 @@ class Ranking extends Component {
     this.state = {
       isLoading: true,
       reacoes: [],
-      rankingPositivo: [],
-      rankingNegativo: []
+      ranking: []
     }
     this.getReacoes = this.getReacoes.bind(this)
   }
@@ -29,18 +28,17 @@ class Ranking extends Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-    }).then(response => {
+    }).then(response =>
       this.setState({
-        'rankingPositivo': response.data,
-        'rankingNegativo': response.data,
+        'ranking': response.data,
         isLoading: false
       })
-    }).catch(error => console.log(error))
+    ).catch(error => console.log(error))
   }
 
   rankingPositivo() {
     let lista = []
-    this.state.rankingPositivo.sort((a, b) =>
+    this.state.ranking.sort((a, b) =>
       b.reacoes_positivas - a.reacoes_positivas
     ).forEach((deputado, index) => {
       if (index < 3) {
@@ -68,7 +66,7 @@ class Ranking extends Component {
 
   rankingNegativo() {
     let lista = []
-    this.state.rankingNegativo.sort((a, b) =>
+    this.state.ranking.sort((a, b) =>
       b.reacoes_negativas - a.reacoes_negativas
     ).forEach((deputado, index) => {
       if (index < 3) {
@@ -95,8 +93,6 @@ class Ranking extends Component {
   }
 
   render() {
-    // console.log(this.state.rankingPositivo)
-    // console.log(this.state.rankingNegativo)
     if(this.state.isLoading){
       return (
         <div>
