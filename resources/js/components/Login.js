@@ -47,7 +47,7 @@ class Login extends Component {
         <div className="col-3  align-self-center">
           <div className="card text-center">
             <div className="card-body">
-              <img src={require('../../../public/img/precisava.png')} className="img-fluid" alt="Logo Precisava?" />
+              <img src={require('../../../public/img/logo.png')} className="img-fluid" alt="Logo Precisava?" />
               <h4 className="card-title">Login</h4>
               <form className="text-left">
                 <div className="form-group">
