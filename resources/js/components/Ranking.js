@@ -29,21 +29,20 @@ class Ranking extends Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-    }).then(response => this.setState({
-      'rankingPositivo': response.data.sort((a, b) =>
-        b.reacoes_positivas - a.reacoes_positivas
-      ),
-      'rankingNegativo': response.data.sort((a, b) =>
-        b.reacoes_negativas - a.reacoes_negativas
-      ),
-      isLoading: false
-    }))
-    .catch(error => console.log(error))
+    }).then(response => {
+      this.setState({
+        'rankingPositivo': response.data,
+        'rankingNegativo': response.data,
+        isLoading: false
+      })
+    }).catch(error => console.log(error))
   }
 
   rankingPositivo() {
     let lista = []
-    this.state.rankingPositivo.forEach((deputado, index) => {
+    this.state.rankingPositivo.sort((a, b) =>
+      b.reacoes_positivas - a.reacoes_positivas
+    ).forEach((deputado, index) => {
       if (index < 3) {
         lista .push(
           <Link key={index} to={`/deputado-${deputado.deputado_id}-despesas`} style={{ textDecoration: 'none' }}>
@@ -69,7 +68,9 @@ class Ranking extends Component {
 
   rankingNegativo() {
     let lista = []
-    this.state.rankingNegativo.forEach((deputado, index) => {
+    this.state.rankingNegativo.sort((a, b) =>
+      b.reacoes_negativas - a.reacoes_negativas
+    ).forEach((deputado, index) => {
       if (index < 3) {
         lista .push(
           <Link key={index} to={`/deputado-${deputado.deputado_id}-despesas`} style={{ textDecoration: 'none' }}>
@@ -94,6 +95,8 @@ class Ranking extends Component {
   }
 
   render() {
+    // console.log(this.state.rankingPositivo)
+    // console.log(this.state.rankingNegativo)
     if(this.state.isLoading){
       return (
         <div>
@@ -112,7 +115,7 @@ class Ranking extends Component {
         <div className="card" style={{ marginTop: '6%', marginBottom: '2%' }}>
           <div className="card-body text-center">
             <div className="row justify-content-around">
-              <div class="col-md-3">
+              <div className="col-md-3">
                 <h3 style={{ paddingBottom: 5 }}>
                   Ranking Positivo
                 </h3>
@@ -120,7 +123,7 @@ class Ranking extends Component {
                   {this.rankingPositivo()}
                 </ul>
               </div>
-              <div class="col-md-3">
+              <div className="col-md-3">
                 <h3 style={{ paddingBottom: 5 }}>
                   Ranking Negativo
                 </h3>
@@ -128,9 +131,6 @@ class Ranking extends Component {
                   {this.rankingNegativo()}
                 </ul>
               </div>
-            </div>
-            <div className="row justify-content-center">
-
             </div>
           </div>
         </div>

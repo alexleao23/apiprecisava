@@ -66218,13 +66218,9 @@ function (_Component) {
           'Content-Type': 'application/json'
         }
       }).then(function (response) {
-        return _this2.setState({
-          'rankingPositivo': response.data.sort(function (a, b) {
-            return b.reacoes_positivas - a.reacoes_positivas;
-          }),
-          'rankingNegativo': response.data.sort(function (a, b) {
-            return b.reacoes_negativas - a.reacoes_negativas;
-          }),
+        _this2.setState({
+          'rankingPositivo': response.data,
+          'rankingNegativo': response.data,
           isLoading: false
         });
       }).catch(function (error) {
@@ -66235,7 +66231,9 @@ function (_Component) {
     key: "rankingPositivo",
     value: function rankingPositivo() {
       var lista = [];
-      this.state.rankingPositivo.forEach(function (deputado, index) {
+      this.state.rankingPositivo.sort(function (a, b) {
+        return b.reacoes_positivas - a.reacoes_positivas;
+      }).forEach(function (deputado, index) {
         if (index < 3) {
           lista.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
             key: index,
@@ -66273,7 +66271,9 @@ function (_Component) {
     key: "rankingNegativo",
     value: function rankingNegativo() {
       var lista = [];
-      this.state.rankingNegativo.forEach(function (deputado, index) {
+      this.state.rankingNegativo.sort(function (a, b) {
+        return b.reacoes_negativas - a.reacoes_negativas;
+      }).forEach(function (deputado, index) {
         if (index < 3) {
           lista.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
             key: index,
@@ -66310,6 +66310,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      // console.log(this.state.rankingPositivo)
+      // console.log(this.state.rankingNegativo)
       if (this.state.isLoading) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card",
@@ -66335,7 +66337,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row justify-content-around"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        class: "col-md-3"
+        className: "col-md-3"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
         style: {
           paddingBottom: 5
@@ -66343,16 +66345,14 @@ function (_Component) {
       }, "Ranking Positivo"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "list-group"
       }, this.rankingPositivo())), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        class: "col-md-3"
+        className: "col-md-3"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
         style: {
           paddingBottom: 5
         }
       }, "Ranking Negativo"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "list-group"
-      }, this.rankingNegativo()))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "row justify-content-center"
-      }))));
+      }, this.rankingNegativo()))))));
     }
   }]);
 
