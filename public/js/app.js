@@ -65860,7 +65860,6 @@ function (_Component) {
     value: function render() {
       var _this6 = this;
 
-      console.log(this.state.despesas);
       var deputado = this.state.deputado;
 
       if (this.state.isLoading) {

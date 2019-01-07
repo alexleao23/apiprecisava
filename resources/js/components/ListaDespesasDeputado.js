@@ -219,7 +219,6 @@ class ListaDespesasDeputado extends Component {
   }
 
   render() {
-    console.log(this.state.despesas)
     const deputado = this.state.deputado
     if(this.state.isLoading){
       return (
