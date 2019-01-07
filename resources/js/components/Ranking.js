@@ -41,19 +41,50 @@ class Ranking extends Component {
     .catch(error => console.log(error))
   }
 
-  ranking(ranking) {
+  rankingPositivo() {
     let lista = []
-    ranking.forEach((deputado, index) => {
+    this.state.rankingPositivo.forEach((deputado, index) => {
       if (index < 3) {
         lista .push(
           <Link key={index} to={`/deputado-${deputado.deputado_id}-despesas`} style={{ textDecoration: 'none' }}>
-            <li class="list-group-item">
+            <li className="list-group-item">
               <h6>
                 <strong>
                   {index+1}º {deputado.nome_deputado}
                 </strong>
               </h6>
               <img className="rounded" src={require(`../../../public/img/deputados/${deputado.deputado_id}.jpg`)} alt={deputado.nome_eleitoral} style={{ width: 110, height: 150 }} />
+              <div className="row justify-content-center" style={{ marginTop: 5 }}>
+                <div className="col-md-12">
+                  <button disabled type="button" className="btn btn-primary btn-lg">{deputado.reacoes_positivas} Likes</button>
+                </div>
+              </div>
+            </li>
+          </Link>
+        )
+      }
+    });
+    return lista
+  }
+
+  rankingNegativo() {
+    let lista = []
+    this.state.rankingNegativo.forEach((deputado, index) => {
+      if (index < 3) {
+        lista .push(
+          <Link key={index} to={`/deputado-${deputado.deputado_id}-despesas`} style={{ textDecoration: 'none' }}>
+            <li className="list-group-item">
+              <h6>
+                <strong>
+                  {index+1}º {deputado.nome_deputado}
+                </strong>
+              </h6>
+              <img className="rounded" src={require(`../../../public/img/deputados/${deputado.deputado_id}.jpg`)} alt={deputado.nome_eleitoral} style={{ width: 110, height: 150 }} />
+              <div className="row justify-content-center" style={{ marginTop: 5 }}>
+                <div className="col-md-12">
+                  <button disabled type="button" className="btn btn-danger btn-lg">{deputado.reacoes_negativas} Deslikes</button>
+                </div>
+              </div>
             </li>
           </Link>
         )
@@ -86,7 +117,7 @@ class Ranking extends Component {
                   Ranking Positivo
                 </h3>
                 <ul className="list-group">
-                  {this.ranking(this.state.rankingPositivo)}
+                  {this.rankingPositivo()}
                 </ul>
               </div>
               <div class="col-md-3">
@@ -94,7 +125,7 @@ class Ranking extends Component {
                   Ranking Negativo
                 </h3>
                 <ul className="list-group">
-                  {this.ranking(this.state.rankingNegativo)}
+                  {this.rankingNegativo()}
                 </ul>
               </div>
             </div>

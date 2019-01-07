@@ -66233,11 +66233,10 @@ function (_Component) {
       });
     }
   }, {
-    key: "ranking",
-    value: function ranking(_ranking) {
+    key: "rankingPositivo",
+    value: function rankingPositivo() {
       var lista = [];
-
-      _ranking.forEach(function (deputado, index) {
+      this.state.rankingPositivo.forEach(function (deputado, index) {
         if (index < 3) {
           lista.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
             key: index,
@@ -66246,7 +66245,7 @@ function (_Component) {
               textDecoration: 'none'
             }
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-            class: "list-group-item"
+            className: "list-group-item"
           }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, index + 1, "\xBA ", deputado.nome_deputado)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
             className: "rounded",
             src: __webpack_require__("./public/img/deputados sync recursive ^\\.\\/.*\\.jpg$")("./".concat(deputado.deputado_id, ".jpg")),
@@ -66255,10 +66254,58 @@ function (_Component) {
               width: 110,
               height: 150
             }
-          }))));
+          }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+            className: "row justify-content-center",
+            style: {
+              marginTop: 5
+            }
+          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+            className: "col-md-12"
+          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+            disabled: true,
+            type: "button",
+            className: "btn btn-primary btn-lg"
+          }, deputado.reacoes_positivas, " Likes"))))));
         }
       });
-
+      return lista;
+    }
+  }, {
+    key: "rankingNegativo",
+    value: function rankingNegativo() {
+      var lista = [];
+      this.state.rankingNegativo.forEach(function (deputado, index) {
+        if (index < 3) {
+          lista.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+            key: index,
+            to: "/deputado-".concat(deputado.deputado_id, "-despesas"),
+            style: {
+              textDecoration: 'none'
+            }
+          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+            className: "list-group-item"
+          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, index + 1, "\xBA ", deputado.nome_deputado)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+            className: "rounded",
+            src: __webpack_require__("./public/img/deputados sync recursive ^\\.\\/.*\\.jpg$")("./".concat(deputado.deputado_id, ".jpg")),
+            alt: deputado.nome_eleitoral,
+            style: {
+              width: 110,
+              height: 150
+            }
+          }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+            className: "row justify-content-center",
+            style: {
+              marginTop: 5
+            }
+          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+            className: "col-md-12"
+          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+            disabled: true,
+            type: "button",
+            className: "btn btn-danger btn-lg"
+          }, deputado.reacoes_negativas, " Deslikes"))))));
+        }
+      });
       return lista;
     }
   }, {
@@ -66296,7 +66343,7 @@ function (_Component) {
         }
       }, "Ranking Positivo"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "list-group"
-      }, this.ranking(this.state.rankingPositivo))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, this.rankingPositivo())), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         class: "col-md-3"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
         style: {
@@ -66304,7 +66351,7 @@ function (_Component) {
         }
       }, "Ranking Negativo"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "list-group"
-      }, this.ranking(this.state.rankingNegativo)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, this.rankingNegativo()))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row justify-content-center"
       }))));
     }
