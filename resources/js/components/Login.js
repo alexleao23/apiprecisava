@@ -44,7 +44,7 @@ class Login extends Component {
     if (this.state.redirect) return <Redirect to='/' />
     return (
       <div className="row justify-content-center" style={{ marginTop: '10%' }}>
-        <div className="col-3  align-self-center">
+        <div className="col-lg-3 col-md-6 col-sm-10  align-self-center">
           <div className="card text-center">
             <div className="card-body">
               <img src={require('../../../public/img/precisava.png')} className="img-fluid" alt="Logo Precisava?" />

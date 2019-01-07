@@ -66057,7 +66057,7 @@ function (_Component) {
           marginTop: '10%'
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-3  align-self-center"
+        className: "col-lg-3 col-md-6 col-sm-10  align-self-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card text-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -66485,7 +66485,7 @@ function (_Component) {
           marginTop: '1%'
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-5  align-self-center"
+        className: "col-lg-5 col-md-8 col-sm-10  align-self-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card text-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

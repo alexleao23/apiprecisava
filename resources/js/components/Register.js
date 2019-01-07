@@ -68,7 +68,7 @@ class Register extends Component {
     if(this.state.registered) return <Redirect to='/login' />
     return (
       <div className="row justify-content-center" style={{ marginTop: '1%' }}>
-        <div className="col-5  align-self-center">
+        <div className="col-lg-5 col-md-8 col-sm-10  align-self-center">
           <div className="card text-center">
             <div className="card-body">
               <img src={require('../../../public/img/precisava.png')} className="img-fluid" alt="Logo Precisava?" />
