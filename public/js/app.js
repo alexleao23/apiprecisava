@@ -65900,7 +65900,7 @@ function (_Component) {
         src: __webpack_require__("./public/img/deputados sync recursive ^\\.\\/.*\\.jpg$")("./".concat(deputado.id, ".jpg")),
         alt: deputado.nome_eleitoral,
         style: {
-          width: 150,
+          width: 140,
           height: 190
         }
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {

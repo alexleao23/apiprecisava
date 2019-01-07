@@ -239,7 +239,7 @@ class ListaDespesasDeputado extends Component {
           <div className="card" style={{ marginTop: '1%', marginBottom: '2%' }}>
             <div className="card-header" style={{ padding: '2%' }}>
               <div className="row justify-content-center">
-                <img className="rounded float-left" src={require(`../../../public/img/deputados/${deputado.id}.jpg`)} alt={deputado.nome_eleitoral} style={{ width: 150, height: 190 }} />
+                <img className="rounded float-left" src={require(`../../../public/img/deputados/${deputado.id}.jpg`)} alt={deputado.nome_eleitoral} style={{ width: 140, height: 190 }} />
                 <div className="table-responsive-md" style={{ paddingLeft: '2%' }}>
                   <table className="table-borderless">
                     <tbody>
