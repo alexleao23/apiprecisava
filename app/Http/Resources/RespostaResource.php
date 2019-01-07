@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\User;
 
-class ComentarioResource extends JsonResource
+class RespostaResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,12 +15,11 @@ class ComentarioResource extends JsonResource
      */
     public function toArray($request)
     {
-        $user = User::find($this->usuario_id);
         return [
             'id' => $this->id,
-            'despesa_id' => $this->despesa_id,
+            'comentario_id' => $this->comentario_id,
             'descricao' => $this->descricao,
-            'nome_usuario' => $user->nome,
+            'usuario' => User::find($this->usuario_id),
             'created_at' => $this->created_at
         ];
     }

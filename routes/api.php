@@ -4,8 +4,10 @@ use Illuminate\Http\Request;
 use App\Models\DespesaDeputado;
 use App\Models\Deputado;
 use App\Models\Comentario;
+use App\Models\Resposta;
 use App\Http\Resources\DespesaDeputadoResource;
 use App\Http\Resources\ComentarioResource;
+use App\Http\Resources\RespostaResource;
 
 Route::post('login', 'Auth\LoginController@login');
 Route::post('register', 'Auth\RegisterController@register');
@@ -49,7 +51,11 @@ Route::group(['middleware' => 'auth:api'], function(){
             Route::post('comentario', 'ComentariosController@store');
 
             // Retorna as informações de um comentário
-            Route::get('comentarios/{comentario_id}', 'ComentariosController@show');
+            Route::get('comentarios/{comentario_id}', function($deputado_id, $despesa_id, $comentario_id){
+                return new ComentarioResource(
+                    Comentario::find($comentario_id)
+                );
+            });
 
             // Salva uma resposta enviada pelo usuário
             Route::post('comentarios/{comentario_id}/resposta', 'RespostasController@store');
@@ -57,16 +63,18 @@ Route::group(['middleware' => 'auth:api'], function(){
 
         Route::group(['prefix' => 'despesas/{despesa_id}/comentarios'], function () {
             // Lista os comentários de uma despesa de um deputado
-            Route::get('', function($deputado_id, $despesa_id){
-                $deputado = Deputado::find($deputado_id);
-                $despesa = $deputado->despesas->find($despesa_id);
+            Route::get('', function($deputado_id, $despesa_id) {
                 return ComentarioResource::collection(
-                    Comentario::where('despesa_id', $despesa->id)->orderBy('created_at')->paginate(30)
+                    Comentario::where('despesa_id', $despesa_id)->orderBy('id', 'desc')->paginate(30)
                 );
             });
 
             // Lista as respostas de um comentário
-            Route::get('{comentario_id}/respostas', 'ComentariosController@showRespostas');
+            Route::get('{comentario_id}/respostas', function($deputado_id, $despesa_id, $comentario_id) {
+                return RespostaResource::collection(
+                    Resposta::where('comentario_id', $comentario_id)->orderBy('id', 'desc')->paginate(30)
+                );
+            });
         });
     });
 });
