@@ -64653,6 +64653,8 @@ function (_Component) {
         _this3.setState({
           unauthorized: true
         });
+
+        window.location.reload();
       });
     }
   }, {
@@ -64974,6 +64976,8 @@ function (_Component) {
         _this2.setState({
           unauthorized: true
         });
+
+        window.location.reload();
       });
     }
   }, {
@@ -65484,6 +65488,8 @@ function (_Component) {
         _this2.setState({
           unauthorized: true
         });
+
+        window.location.reload();
       });
     }
   }, {
@@ -65728,6 +65734,8 @@ function (_Component) {
         _this4.setState({
           unauthorized: true
         });
+
+        window.location.reload();
       });
     }
   }, {
