@@ -33,25 +33,20 @@ class Header extends Component {
 
   render() {
     if(this.state.deslogado){
-      return <Redirect to="/login" />
+      return <Redirect to="/" />
     }
     return (
       <nav
         className='navbar navbar-expand-lg navbar-light navbar-laravel'
-        style={{
-          borderRadius: '5px'
-        }}
+        style={{ borderRadius: '5px' }}
       >
         <div className='container-fluid'>
-          <NavLink className='navbar-brand' to='/'>
+          <NavLink className='navbar-brand' to='/deputados'>
             <img
               src={require('../../../public/img/logo.png')}
               className="img-fluid"
               alt="Logo Precisava?"
-              style={{
-                height: 45,
-                width: 150
-              }}
+              style={{ height: 45, width: 150 }}
             />
           </NavLink>
 
@@ -60,7 +55,7 @@ class Header extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav" style={{ justifyContent: 'flex-end' }}>
             <div className="navbar-nav text-right" style={{ fontSize: '20px' }}>
-              <NavLink exact className="nav-item nav-link" to="/">Deputados </NavLink>
+              <NavLink exact className="nav-item nav-link" to="/deputados">Deputados </NavLink>
               <NavLink exact className="nav-item nav-link" to="/ranking">Ranking </NavLink>
               <a onClick={this.logout} href="#" className="nav-item nav-link">Sair </a>
             </div>

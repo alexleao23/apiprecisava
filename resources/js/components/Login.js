@@ -41,7 +41,7 @@ class Login extends Component {
   }
 
   render() {
-    if (this.state.redirect) return <Redirect to='/' />
+    if (this.state.redirect) return <Redirect to='/deputados' />
     return (
       <div className="row justify-content-center" style={{ marginTop: '10%' }}>
         <div className="col-lg-3 col-md-6 col-sm-10  align-self-center">
@@ -60,8 +60,11 @@ class Login extends Component {
                 </div>
                 <div className="form-group">
                   <div className="row">
-                    <div className="col-5">
+                    <div className="col-6">
                       <Link to="/register" style={{ textDecoration: 'none' }}>Cadastre-se</Link>
+                    </div>
+                    <div className="col-6 text-right">
+                      <Link to="/" style={{ textDecoration: 'none' }}>Página Inicial</Link>
                     </div>
                   </div>
                 </div>

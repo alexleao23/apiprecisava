@@ -10,6 +10,7 @@ import NotFound from './NotFound'
 import Register from './Register'
 import Login from './Login'
 import Home from './Home'
+import HomePage from './HomePage'
 import ListaDespesasDeputado from './ListaDespesasDeputado'
 import DespesaComentarios from './DespesaComentarios'
 import ComentarioRespostas from './ComentarioRespostas'
@@ -33,7 +34,7 @@ const PublicRoute = ({ component: Component, ...rest }) => {
       if (!localStorage.apitoken) {
         return <Component {...props} />
       } else {
-        return <Redirect to="/" />
+        return <Redirect to="/deputados" />
       }
     }} />
   );
@@ -45,11 +46,12 @@ class App extends Component {
       <Router>
         <div className="container-fluid">
           <Switch>
-            <PrivateRoute exact path='/' component={Home} />
+            <PrivateRoute exact path='/deputados' component={Home} />
             <PrivateRoute exact path='/deputado-:deputadoId-despesas' component={ListaDespesasDeputado} />
             <PrivateRoute exact path='/deputado-:deputadoId-despesa-:despesaId-comentarios' component={DespesaComentarios} />
             <PrivateRoute exact path='/deputado-:deputadoId-despesa-:despesaId-comentario-:comentarioId-respostas' component={ComentarioRespostas} />
             <PrivateRoute exact path='/ranking' component={Ranking} />
+            <PublicRoute exact path='/' component={HomePage} />
             <PublicRoute exact path='/login' component={Login} />
             <PublicRoute exact path='/register' component={Register} />
             <Route component={NotFound}/>

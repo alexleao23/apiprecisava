@@ -64402,10 +64402,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Register__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Register */ "./resources/js/components/Register.js");
 /* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Login */ "./resources/js/components/Login.js");
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Home */ "./resources/js/components/Home.js");
-/* harmony import */ var _ListaDespesasDeputado__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ListaDespesasDeputado */ "./resources/js/components/ListaDespesasDeputado.js");
-/* harmony import */ var _DespesaComentarios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./DespesaComentarios */ "./resources/js/components/DespesaComentarios.js");
-/* harmony import */ var _ComentarioRespostas__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ComentarioRespostas */ "./resources/js/components/ComentarioRespostas.js");
-/* harmony import */ var _Ranking__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Ranking */ "./resources/js/components/Ranking.js");
+/* harmony import */ var _HomePage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./HomePage */ "./resources/js/components/HomePage.js");
+/* harmony import */ var _ListaDespesasDeputado__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ListaDespesasDeputado */ "./resources/js/components/ListaDespesasDeputado.js");
+/* harmony import */ var _DespesaComentarios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./DespesaComentarios */ "./resources/js/components/DespesaComentarios.js");
+/* harmony import */ var _ComentarioRespostas__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ComentarioRespostas */ "./resources/js/components/ComentarioRespostas.js");
+/* harmony import */ var _Ranking__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Ranking */ "./resources/js/components/Ranking.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64429,6 +64430,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 
 
 
@@ -64469,7 +64471,7 @@ var PublicRoute = function PublicRoute(_ref2) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props);
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-          to: "/"
+          to: "/deputados"
         });
       }
     }
@@ -64494,24 +64496,28 @@ function (_Component) {
         className: "container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PrivateRoute, {
         exact: true,
-        path: "/",
+        path: "/deputados",
         component: _Home__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PrivateRoute, {
         exact: true,
         path: "/deputado-:deputadoId-despesas",
-        component: _ListaDespesasDeputado__WEBPACK_IMPORTED_MODULE_7__["default"]
+        component: _ListaDespesasDeputado__WEBPACK_IMPORTED_MODULE_8__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PrivateRoute, {
         exact: true,
         path: "/deputado-:deputadoId-despesa-:despesaId-comentarios",
-        component: _DespesaComentarios__WEBPACK_IMPORTED_MODULE_8__["default"]
+        component: _DespesaComentarios__WEBPACK_IMPORTED_MODULE_9__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PrivateRoute, {
         exact: true,
         path: "/deputado-:deputadoId-despesa-:despesaId-comentario-:comentarioId-respostas",
-        component: _ComentarioRespostas__WEBPACK_IMPORTED_MODULE_9__["default"]
+        component: _ComentarioRespostas__WEBPACK_IMPORTED_MODULE_10__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PrivateRoute, {
         exact: true,
         path: "/ranking",
-        component: _Ranking__WEBPACK_IMPORTED_MODULE_10__["default"]
+        component: _Ranking__WEBPACK_IMPORTED_MODULE_11__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PublicRoute, {
+        exact: true,
+        path: "/",
+        component: _HomePage__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PublicRoute, {
         exact: true,
         path: "/login",
@@ -65281,7 +65287,7 @@ function (_Component) {
     value: function render() {
       if (this.state.deslogado) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-          to: "/login"
+          to: "/"
         });
       }
 
@@ -65294,7 +65300,7 @@ function (_Component) {
         className: "container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
         className: "navbar-brand",
-        to: "/"
+        to: "/deputados"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
         src: __webpack_require__(/*! ../../../public/img/logo.png */ "./public/img/logo.png"),
         className: "img-fluid",
@@ -65327,7 +65333,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
         exact: true,
         className: "nav-item nav-link",
-        to: "/"
+        to: "/deputados"
       }, "Deputados "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["NavLink"], {
         exact: true,
         className: "nav-item nav-link",
@@ -65404,6 +65410,130 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./resources/js/components/HomePage.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/HomePage.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var HomePage =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(HomePage, _Component);
+
+  function HomePage() {
+    _classCallCheck(this, HomePage);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(HomePage).apply(this, arguments));
+  }
+
+  _createClass(HomePage, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "navbar navbar-expand-lg navbar-light navbar-laravel",
+        style: {
+          borderRadius: '5px'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container-fluid"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "navbar-brand",
+        to: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: __webpack_require__(/*! ../../../public/img/logo.png */ "./public/img/logo.png"),
+        className: "img-fluid",
+        alt: "Logo Precisava?",
+        style: {
+          height: 45,
+          width: 150
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "navbar-toggler",
+        type: "button",
+        "data-toggle": "collapse",
+        "data-target": "#navbarNav",
+        "aria-controls": "navbarNav",
+        "aria-expanded": "false",
+        "aria-label": "Toggle navigation"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "navbar-toggler-icon"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "collapse navbar-collapse",
+        id: "navbarNav",
+        style: {
+          justifyContent: 'flex-end'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-nav text-right",
+        style: {
+          fontSize: '20px'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        exact: true,
+        className: "nav-item nav-link",
+        to: "/login"
+      }, "Login "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        exact: true,
+        className: "nav-item nav-link",
+        to: "/register"
+      }, "Cadastro "))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card",
+        style: {
+          marginTop: '1%'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row justify-content-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-sm-10 col-md-10 col-lg-7"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "card-title text-center"
+      }, "Instru\xE7\xF5es de uso do sistema"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "embed-responsive embed-responsive-16by9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
+        className: "embed-responsive-item",
+        src: "https://youtu.be/t6X44OqKxeQ",
+        allowFullScreen: true
+      })))))));
+    }
+  }]);
+
+  return HomePage;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (HomePage);
 
 /***/ }),
 
@@ -66089,7 +66219,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       if (this.state.redirect) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-        to: "/"
+        to: "/deputados"
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row justify-content-center",
@@ -66131,13 +66261,20 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-5"
+        className: "col-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/register",
         style: {
           textDecoration: 'none'
         }
-      }, "Cadastre-se")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Cadastre-se")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-6 text-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/",
+        style: {
+          textDecoration: 'none'
+        }
+      }, "P\xE1gina Inicial")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit,
         type: "button",
         className: "btn btn-primary btn-lg btn-block",
