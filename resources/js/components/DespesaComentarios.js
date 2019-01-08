@@ -23,7 +23,8 @@ class DespesaComentarios extends Component {
       isLoading: true,
       disabled: false,
       pagination: {},
-      loadMoreDisabled: false
+      loadMoreDisabled: false,
+      unauthorized: false
     }
     this.getDespesa = this.getDespesa.bind(this)
     this.getComentarios = this.getComentarios.bind(this)
@@ -73,8 +74,11 @@ class DespesaComentarios extends Component {
       this.setState({
         despesa: response.data,
       })
-    }).catch(error => {
-      console.log(error)
+    }).catch(() => {
+      localStorage.removeItem('apitoken')
+      this.setState({
+        unauthorized: true
+      })
     })
   }
 

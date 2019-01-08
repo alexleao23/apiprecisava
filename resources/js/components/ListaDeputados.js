@@ -1,6 +1,6 @@
 import Axios from 'axios'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Spinner from './Spinner'
 
 class ListaDeputados extends Component {
@@ -9,6 +9,7 @@ class ListaDeputados extends Component {
     this.state = {
       isLoading: true,
       deputados: [],
+      unauthorized: false
     }
   }
 
@@ -26,12 +27,18 @@ class ListaDeputados extends Component {
         deputados: response.data,
         isLoading: false
       })
-    ).catch(err => {
-      console.log(err)
+    ).catch(() => {
+      localStorage.removeItem('apitoken')
+      this.setState({
+        unauthorized: true
+      })
     })
   }
 
   render() {
+    if(this.state.unauthorized){
+      return <Redirect to="/login" />
+    }
     if(this.state.isLoading){
       return (
         <div className="card" style={{ marginTop: '1%' }}>

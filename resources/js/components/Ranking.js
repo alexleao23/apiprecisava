@@ -10,7 +10,8 @@ class Ranking extends Component {
     this.state = {
       isLoading: true,
       reacoes: [],
-      ranking: []
+      ranking: [],
+      unauthorized: false
     }
     this.getReacoes = this.getReacoes.bind(this)
   }
@@ -33,7 +34,12 @@ class Ranking extends Component {
         'ranking': response.data,
         isLoading: false
       })
-    ).catch(error => console.log(error))
+    ).catch(() => {
+      localStorage.removeItem('apitoken')
+      this.setState({
+        unauthorized: true
+      })
+    })
   }
 
   rankingPositivo() {

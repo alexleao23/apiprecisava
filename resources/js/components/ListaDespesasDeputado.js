@@ -23,7 +23,8 @@ class ListaDespesasDeputado extends Component {
       pagination: {},
       isLoading: true,
       rerenderButtons: false,
-      loadMoreDisabled: false
+      loadMoreDisabled: false,
+      unauthorized: false
     }
     this.getDespesas = this.getDespesas.bind(this)
     this.getDeputado = this.getDeputado.bind(this)
@@ -97,8 +98,11 @@ class ListaDespesasDeputado extends Component {
       this.setState({
         deputado: response.data,
       })
-    }).catch(error => {
-      console.log(error)
+    }).catch(() => {
+      localStorage.removeItem('apitoken')
+      this.setState({
+        unauthorized: true
+      })
     })
   }
 

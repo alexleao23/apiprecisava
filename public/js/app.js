@@ -65444,7 +65444,8 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ListaDeputados).call(this, props));
     _this.state = {
       isLoading: true,
-      deputados: []
+      deputados: [],
+      unauthorized: false
     };
     return _this;
   }
@@ -65467,13 +65468,23 @@ function (_Component) {
           deputados: response.data,
           isLoading: false
         });
-      }).catch(function (err) {
-        console.log(err);
+      }).catch(function () {
+        localStorage.removeItem('apitoken');
+
+        _this2.setState({
+          unauthorized: true
+        });
       });
     }
   }, {
     key: "render",
     value: function render() {
+      if (this.state.unauthorized) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+          to: "/login"
+        });
+      }
+
       if (this.state.isLoading) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "card",

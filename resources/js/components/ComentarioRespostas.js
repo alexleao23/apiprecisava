@@ -12,6 +12,7 @@ class ComentarioRespostas extends Component {
       user: {},
       url: `api/deputados/${this.props.match.params.deputadoId}/despesas/${this.props.match.params.despesaId}/comentarios/${this.props.match.params.comentarioId}/respostas`,
       loadMoreDisabled: false,
+      unauthorized: false,
       pagination: {},
       textarea: ''
     }
@@ -61,8 +62,11 @@ class ComentarioRespostas extends Component {
       this.setState({
         comentario: response.data
       })
-    ).catch(error => {
-      console.log(error)
+    ).catch(() => {
+      localStorage.removeItem('apitoken')
+      this.setState({
+        unauthorized: true
+      })
     })
   }
 
