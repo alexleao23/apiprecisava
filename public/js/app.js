@@ -65524,7 +65524,7 @@ function (_Component) {
         className: "embed-responsive embed-responsive-16by9"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
         className: "embed-responsive-item",
-        src: "https://youtu.be/t6X44OqKxeQ",
+        src: "https://www.youtube.com/embed/t6X44OqKxeQ",
         allowFullScreen: true
       })))))));
     }

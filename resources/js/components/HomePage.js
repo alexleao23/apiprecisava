@@ -36,7 +36,7 @@ class HomePage extends Component {
               <div className="col-sm-10 col-md-10 col-lg-7">
                 <h3 className="card-title text-center">Instruções de uso do sistema</h3>
                 <div className="embed-responsive embed-responsive-16by9">
-                  <iframe className="embed-responsive-item" src="https://youtu.be/t6X44OqKxeQ" allowFullScreen></iframe>
+                  <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/t6X44OqKxeQ" allowFullScreen></iframe>
                 </div>
               </div>
             </div>
