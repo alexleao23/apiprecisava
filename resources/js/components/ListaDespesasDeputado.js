@@ -103,6 +103,7 @@ class ListaDespesasDeputado extends Component {
       this.setState({
         unauthorized: true
       })
+      window.location.reload()
     })
   }
 

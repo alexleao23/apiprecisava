@@ -67,6 +67,7 @@ class ComentarioRespostas extends Component {
       this.setState({
         unauthorized: true
       })
+      window.location.reload()
     })
   }
 

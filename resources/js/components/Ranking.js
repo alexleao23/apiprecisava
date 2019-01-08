@@ -39,6 +39,7 @@ class Ranking extends Component {
       this.setState({
         unauthorized: true
       })
+      window.location.reload()
     })
   }
 

@@ -64588,6 +64588,7 @@ function (_Component) {
       user: {},
       url: "api/deputados/".concat(_this.props.match.params.deputadoId, "/despesas/").concat(_this.props.match.params.despesaId, "/comentarios/").concat(_this.props.match.params.comentarioId, "/respostas"),
       loadMoreDisabled: false,
+      unauthorized: false,
       pagination: {},
       textarea: ''
     };
@@ -64646,8 +64647,12 @@ function (_Component) {
         return _this3.setState({
           comentario: response.data
         });
-      }).catch(function (error) {
-        console.log(error);
+      }).catch(function () {
+        localStorage.removeItem('apitoken');
+
+        _this3.setState({
+          unauthorized: true
+        });
       });
     }
   }, {
@@ -64904,7 +64909,8 @@ function (_Component) {
       isLoading: true,
       disabled: false,
       pagination: {},
-      loadMoreDisabled: false
+      loadMoreDisabled: false,
+      unauthorized: false
     };
     _this.getDespesa = _this.getDespesa.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.getComentarios = _this.getComentarios.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -64962,8 +64968,12 @@ function (_Component) {
         _this2.setState({
           despesa: response.data
         });
-      }).catch(function (error) {
-        console.log(error);
+      }).catch(function () {
+        localStorage.removeItem('apitoken');
+
+        _this2.setState({
+          unauthorized: true
+        });
       });
     }
   }, {
@@ -65623,7 +65633,8 @@ function (_Component) {
       pagination: {},
       isLoading: true,
       rerenderButtons: false,
-      loadMoreDisabled: false
+      loadMoreDisabled: false,
+      unauthorized: false
     };
     _this.getDespesas = _this.getDespesas.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.getDeputado = _this.getDeputado.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -65711,8 +65722,12 @@ function (_Component) {
         _this4.setState({
           deputado: response.data
         });
-      }).catch(function (error) {
-        console.log(error);
+      }).catch(function () {
+        localStorage.removeItem('apitoken');
+
+        _this4.setState({
+          unauthorized: true
+        });
       });
     }
   }, {
@@ -66209,7 +66224,8 @@ function (_Component) {
     _this.state = {
       isLoading: true,
       reacoes: [],
-      ranking: []
+      ranking: [],
+      unauthorized: false
     };
     _this.getReacoes = _this.getReacoes.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
@@ -66238,8 +66254,14 @@ function (_Component) {
           'ranking': response.data,
           isLoading: false
         });
-      }).catch(function (error) {
-        return console.log(error);
+      }).catch(function () {
+        localStorage.removeItem('apitoken');
+
+        _this2.setState({
+          unauthorized: true
+        });
+
+        window.location.reload();
       });
     }
   }, {
