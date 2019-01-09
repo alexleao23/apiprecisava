@@ -24,28 +24,28 @@ class Register extends Component {
         this.setState({
           nome: event.target.value
         })
-        break;
+        break
       case 'dataNasc':
         this.setState({
           dataNasc: event.target.value
         })
-        break;
+        break
       case 'email':
         this.setState({
           email: event.target.value
         })
-        break;
+        break
 
       case 'password':
         this.setState({
           senha: event.target.value
         })
-        break;
+        break
       default:
         this.setState({
           senhaConfirmar: event.target.value
         })
-        break;
+        break
     }
   }
 

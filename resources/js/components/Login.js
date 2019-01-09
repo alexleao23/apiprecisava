@@ -16,14 +16,17 @@ class Login extends Component {
   }
 
   handleChangeText(event) {
-    if (event.target.type == 'email') {
-      this.setState({
-        email: event.target.value
-      })
-    } else {
-      this.setState({
-        senha: event.target.value
-      })
+    switch (event.target.id) {
+      case 'email':
+        this.setState({
+          email: event.target.value
+        })
+        break
+      case 'senha':
+        this.setState({
+          senha: event.target.value
+        })
+        break
     }
   }
 
@@ -52,11 +55,11 @@ class Login extends Component {
               <form className="text-left">
                 <div className="form-group">
                   <label>E-mail</label>
-                  <input value={this.state.email} onChange={this.handleChangeText} type="email" className="form-control" placeholder="" />
+                  <input value={this.state.email} onChange={this.handleChangeText} id="email" type="email" className="form-control" placeholder="" />
                 </div>
                 <div className="form-group">
                   <label>Senha</label>
-                  <input value={this.state.senha} onChange={this.handleChangeText} type="password" className="form-control" placeholder="" />
+                  <input value={this.state.senha} onChange={this.handleChangeText} id="senha" type="password" className="form-control" placeholder="" />
                 </div>
                 <div className="form-group">
                   <div className="row">
