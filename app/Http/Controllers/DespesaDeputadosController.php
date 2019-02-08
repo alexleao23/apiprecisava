@@ -53,8 +53,7 @@ class DespesaDeputadosController extends Controller
      */
     public function show($deputado_id, $despesa_id)
     {
-        $deputado = Deputado::find($deputado_id);
-        $despesa = $deputado->despesas->find($despesa_id);
+        $despesa = DespesaDeputado::find($despesa_id);
         return $despesa;
     }
 

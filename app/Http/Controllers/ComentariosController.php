@@ -17,9 +17,7 @@ class ComentariosController extends Controller
 
     public function showRespostas($deputado_id, $despesa_id, $comentario_id)
     {
-        $deputado = Deputado::find($deputado_id);
-        $despesa = $deputado->despesas->find($despesa_id);
-        $comentario = $despesa->comentarios->find($comentario_id);
+        $comentario = $this->comentarios->find($comentario_id);
         return $comentario->respostas;
 
     }
@@ -67,9 +65,7 @@ class ComentariosController extends Controller
      */
     public function show($deputado_id, $despesa_id, $comentario_id)
     {
-        $deputado = Deputado::find($deputado_id);
-        $despesa = $deputado->despesas->find($despesa_id);
-        return $despesa->comentarios->find($comentario_id);
+        return $this->comentarios->find($comentario_id);
     }
 
     /**

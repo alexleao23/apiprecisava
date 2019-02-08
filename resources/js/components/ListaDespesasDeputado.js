@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Header from './Header'
 import Spinner from './Spinner'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsUp, faThumbsDown, faCommentAlt } from '@fortawesome/free-solid-svg-icons'
 
 function numeroParaMoeda(n, c, d, t) {
   let s = 0
@@ -181,42 +183,87 @@ class ListaDespesasDeputado extends Component {
     if(despesa.reacao_usuario != null && despesa.reacao_usuario.reacao == 1) {
       return (
         <div>
-          <button disabled style={{ margin: 2 }} type="button" className='btn btn-primary'>
-            Like
+          <button disabled style={{ margin: 2 }} type="button" className='btn btn-success'>
+            Precisava
+            <FontAwesomeIcon
+              icon={faThumbsUp}
+              pull="right"
+              size="lg"
+            />
           </button>
           <button disabled style={{ margin: 2 }} type="button" className='btn btn-outline-danger'>
-            Deslike
+            Não Precisava
+            <FontAwesomeIcon
+              icon={faThumbsDown}
+              pull="right"
+              size="lg"
+            />
           </button>
           <Link style={{ margin: 2 }} className="btn btn-outline-secondary" to={`/deputado-${this.state.deputado.id}-despesa-${despesa.id}-comentarios`}>
             Comentar
+            <FontAwesomeIcon
+              icon={faCommentAlt}
+              pull="right"
+              size="lg"
+            />
           </Link>
         </div>
       )
     } else if(despesa.reacao_usuario != null && despesa.reacao_usuario.reacao == 0) {
       return (
         <div>
-          <button disabled style={{ margin: 2 }} type="button" className='btn btn-outline-primary'>
-            Like
+          <button disabled style={{ margin: 2 }} type="button" className='btn btn-outline-success'>
+            Precisava
+            <FontAwesomeIcon
+              icon={faThumbsUp}
+              pull="right"
+              size="lg"
+            />
           </button>
           <button disabled style={{ margin: 2 }} type="button" className='btn btn-danger'>
-            Deslike
+            Não Precisava
+            <FontAwesomeIcon
+              icon={faThumbsDown}
+              pull="right"
+              size="lg"
+            />
           </button>
           <Link style={{ margin: 2 }} className="btn btn-outline-secondary" to={`/deputado-${this.state.deputado.id}-despesa-${despesa.id}-comentarios`}>
             Comentar
+            <FontAwesomeIcon
+              icon={faCommentAlt}
+              pull="right"
+              size="lg"
+            />
           </Link>
         </div>
       )
     } else {
       return (
         <div>
-          <button onClick={()=>this.handleReacao(despesa.id, 1)} style={{ margin: 2 }} type="button" className='btn btn-outline-primary'>
-            Like
+          <button onClick={()=>this.handleReacao(despesa.id, 1)} style={{ margin: 2 }} type="button" className='btn btn-outline-success'>
+            Precisava
+            <FontAwesomeIcon
+              icon={faThumbsUp}
+              pull="right"
+              size="lg"
+            />
           </button>
           <button onClick={()=>this.handleReacao(despesa.id, 0)} style={{ margin: 2 }} type="button" className='btn btn-outline-danger'>
-            Deslike
+            Não Precisava
+            <FontAwesomeIcon
+              icon={faThumbsDown}
+              pull="right"
+              size="lg"
+            />
           </button>
           <Link style={{ margin: 2 }} className="btn btn-outline-secondary" to={`/deputado-${this.state.deputado.id}-despesa-${despesa.id}-comentarios`}>
             Comentar
+            <FontAwesomeIcon
+              icon={faCommentAlt}
+              pull="right"
+              size="lg"
+            />
           </Link>
         </div>
       )

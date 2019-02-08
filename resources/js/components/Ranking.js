@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Spinner from './Spinner'
 import Header from './Header'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 
 class Ranking extends Component {
   constructor(props) {
@@ -57,10 +59,25 @@ class Ranking extends Component {
                   {index+1}º {deputado.nome_deputado}
                 </strong>
               </h6>
-              <img className="rounded" src={require(`../../../public/img/deputados/${deputado.deputado_id}.jpg`)} alt={deputado.nome_eleitoral} style={{ width: 110, height: 150 }} />
               <div className="row justify-content-center" style={{ marginTop: 5 }}>
                 <div className="col-md-12">
-                  <button disabled type="button" className="btn btn-primary btn-lg">{deputado.reacoes_positivas} Likes</button>
+                  <img className="rounded" src={require(`../../../public/img/deputados/${deputado.deputado_id}.jpg`)} alt={deputado.nome_eleitoral} style={{ width: 110, height: 150 }} />
+                  <button
+                    disabled type="button"
+                    className="btn btn-success btn-lg"
+                    style={{ padding: 30, marginLeft: 5 }}
+                  >
+                    <div className="row justify-content-center">
+                      {deputado.reacoes_positivas}
+                    </div>
+                    <div className="row justify-content-center">
+                      <FontAwesomeIcon
+                        icon={faThumbsUp}
+                        pull="right"
+                        size="lg"
+                      />
+                    </div>
+                  </button>
                 </div>
               </div>
             </li>
@@ -85,10 +102,30 @@ class Ranking extends Component {
                   {index+1}º {deputado.nome_deputado}
                 </strong>
               </h6>
-              <img className="rounded" src={require(`../../../public/img/deputados/${deputado.deputado_id}.jpg`)} alt={deputado.nome_eleitoral} style={{ width: 110, height: 150 }} />
               <div className="row justify-content-center" style={{ marginTop: 5 }}>
                 <div className="col-md-12">
-                  <button disabled type="button" className="btn btn-danger btn-lg">{deputado.reacoes_negativas} Deslikes</button>
+                  <img
+                    className="rounded"
+                    src={require(`../../../public/img/deputados/${deputado.deputado_id}.jpg`)}
+                    alt={deputado.nome_eleitoral}
+                    style={{ width: 110, height: 150 }}
+                  />
+                  <button
+                    disabled type="button"
+                    className="btn btn-danger btn-lg"
+                    style={{ padding: 30, marginLeft: 5 }}
+                  >
+                    <div className="row justify-content-center">
+                      {deputado.reacoes_negativas}
+                    </div>
+                    <div className="row justify-content-center">
+                      <FontAwesomeIcon
+                        icon={faThumbsDown}
+                        pull="right"
+                        size="lg"
+                      />
+                    </div>
+                  </button>
                 </div>
               </div>
             </li>
