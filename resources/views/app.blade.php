@@ -10,6 +10,7 @@
     <title>Precisava?</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fontawesome/css/all.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app"></div>

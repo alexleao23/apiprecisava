@@ -8,7 +8,8 @@ class Login extends Component {
     this.state = {
       email: '',
       senha: '',
-      redirect: false
+      redirect: false,
+      loginError: ''
     }
 
     this.handleChangeText = this.handleChangeText.bind(this)
@@ -30,17 +31,62 @@ class Login extends Component {
     }
   }
 
-  handleSubmit() {
-    Axios.post('/api/login', {
+  async handleSubmit() {
+    const response = await Axios.post('/api/login', {
       email: this.state.email,
       password: this.state.senha,
-    }).then(response => response.data)
-    .then(data => {
-      localStorage.setItem('apitoken', data.api_token)
+    });
+
+    if(response.data.error) {
+      this.setState({
+        loginError: response.data.error
+      });
+    } else {
+      localStorage.setItem('apitoken', response.data.api_token);
       this.setState({
         redirect: true
-      })
-    })
+      });
+    }
+  }
+
+  loginFailed() {
+    if (this.state.loginError) {
+      setTimeout(() => {
+        this.setState({
+          loginError: ''
+        });
+      }, 5000);
+
+      return (
+        <div className="alert alert-danger" style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
+        }}>
+          <span>{this.state.loginError}</span>
+          <button type="button" style={{
+            borderRadius: '50%',
+            border: 'none',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: '#761b18',
+            fontSize: 11,
+            outline: 'none',
+            cursor: 'pointer',
+            marginTop: 3
+          }} onClick={() => this.closeAlert()}>
+            <i className="fas fa-times"></i>
+          </button>
+        </div>
+      );
+    }
+
+    return null;
+  }
+
+  closeAlert() {
+    this.setState({
+      loginError: ''
+    });
   }
 
   render() {
@@ -57,6 +103,9 @@ class Login extends Component {
                 style={{ height: 85, width: 250, paddingBottom: 10 }}
               />
               <h4 className="card-title">Login</h4>
+
+              {this.loginFailed()}
+
               <form className="text-left">
                 <div className="form-group">
                   <label>E-mail</label>

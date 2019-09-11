@@ -19,11 +19,11 @@ class CreateDeputadosTable extends Migration
             $table->string('nome_eleitoral');
             $table->string('email');
             $table->string('sexo');
-            $table->string('escolaridade');
-            $table->date('data_nasc');
-            $table->string('telefone');
-            $table->string('uf_nasc');
-            $table->string('municipio_nasc');
+            $table->string('escolaridade')->nullable();
+            $table->date('data_nasc')->nullable();
+            $table->string('telefone')->nullable();
+            $table->string('uf_nasc')->nullable();
+            $table->string('municipio_nasc')->nullable();
             $table->string('uf_eleito');
             $table->string('sigla_partido');
             $table->string('condicao_eleitoral');

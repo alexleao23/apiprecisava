@@ -16,7 +16,7 @@ class CreateDespesaDeputadosTable extends Migration
         Schema::create('despesa_deputados', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('deputado_id');
-            $table->foreign('deputado_id')->references('id')->on('deputados');
+            // $table->foreign('deputado_id')->references('id')->on('deputados');
             $table->string('nome_deputado')->nullable();
             $table->string('sigla_uf')->nullable();
             $table->string('sigla_partido')->nullable();

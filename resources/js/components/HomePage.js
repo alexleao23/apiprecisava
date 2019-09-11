@@ -24,8 +24,8 @@ class HomePage extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav" style={{ justifyContent: 'flex-end' }}>
               <div className="navbar-nav text-right" style={{ fontSize: '20px' }}>
-                <Link exact className="nav-item nav-link" to="/login">Login </Link>
-                <Link exact className="nav-item nav-link" to="/register">Cadastro </Link>
+                <Link className="nav-item nav-link" to="/login">Login </Link>
+                <Link className="nav-item nav-link" to="/register">Cadastro </Link>
               </div>
             </div>
           </div>
