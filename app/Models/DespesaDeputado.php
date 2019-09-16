@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class DespesaDeputado extends Model
 {
+    protected $fillable = [
+      'id', 'deputado_id', 'nome_deputado',
+      'sigla_uf', 'sigla_partido', 'descricao',
+      'fornecedor', 'cpfcnpj_fornecedor',
+      'data_emissao', 'valor_documento',
+      'mes_documento', 'ano_documento'
+    ];
+
     public function comentarios()
     {
         return $this->hasMany('App\Models\Comentario', 'despesa_id');

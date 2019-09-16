@@ -74609,135 +74609,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./public/img/deputados sync recursive ^\\.\\/.*\\.jpg$":
-/*!*************************************************!*\
-  !*** ./public/img/deputados sync ^\.\/.*\.jpg$ ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./105112.jpg": "./public/img/deputados/105112.jpg",
-	"./160591.jpg": "./public/img/deputados/160591.jpg",
-	"./160641.jpg": "./public/img/deputados/160641.jpg",
-	"./178831.jpg": "./public/img/deputados/178831.jpg",
-	"./178851.jpg": "./public/img/deputados/178851.jpg",
-	"./178852.jpg": "./public/img/deputados/178852.jpg",
-	"./178995.jpg": "./public/img/deputados/178995.jpg",
-	"./73926.jpg": "./public/img/deputados/73926.jpg"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) { // check for number or string
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return id;
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./public/img/deputados sync recursive ^\\.\\/.*\\.jpg$";
-
-/***/ }),
-
-/***/ "./public/img/deputados/105112.jpg":
-/*!*****************************************!*\
-  !*** ./public/img/deputados/105112.jpg ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/105112.jpg?f911129c26fd519603b2f168ae97cf40";
-
-/***/ }),
-
-/***/ "./public/img/deputados/160591.jpg":
-/*!*****************************************!*\
-  !*** ./public/img/deputados/160591.jpg ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/160591.jpg?dad54fc70d731181322cf2edf8e409ce";
-
-/***/ }),
-
-/***/ "./public/img/deputados/160641.jpg":
-/*!*****************************************!*\
-  !*** ./public/img/deputados/160641.jpg ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/160641.jpg?35207553dc776a4fc4339d0b56e907e6";
-
-/***/ }),
-
-/***/ "./public/img/deputados/178831.jpg":
-/*!*****************************************!*\
-  !*** ./public/img/deputados/178831.jpg ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/178831.jpg?f346ff2dd68992f9c98c879de59d54f0";
-
-/***/ }),
-
-/***/ "./public/img/deputados/178851.jpg":
-/*!*****************************************!*\
-  !*** ./public/img/deputados/178851.jpg ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/178851.jpg?1c9bdb9efb8fc49ec8acdddcff64abf4";
-
-/***/ }),
-
-/***/ "./public/img/deputados/178852.jpg":
-/*!*****************************************!*\
-  !*** ./public/img/deputados/178852.jpg ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/178852.jpg?f696cb512f22045df8f226b97b5efecd";
-
-/***/ }),
-
-/***/ "./public/img/deputados/178995.jpg":
-/*!*****************************************!*\
-  !*** ./public/img/deputados/178995.jpg ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/178995.jpg?c0e7402366d2eacdeb967479080ff9d7";
-
-/***/ }),
-
-/***/ "./public/img/deputados/73926.jpg":
-/*!****************************************!*\
-  !*** ./public/img/deputados/73926.jpg ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/73926.jpg?701161df94e852d6e6d8b6a4a55fd423";
-
-/***/ }),
-
 /***/ "./public/img/logo.png":
 /*!*****************************!*\
   !*** ./public/img/logo.png ***!
@@ -76133,9 +76004,14 @@ function (_Component) {
             boxShadow: '7px 10px #e8e8e8'
           }
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "card-body"
+          className: "card-body",
+          style: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-          src: "https://www.camara.leg.br/internet/deputado/bandep/".concat(deputado.id, ".jpg"),
+          src: deputado.url_foto,
           alt: deputado.nome_eleitoral,
           style: {
             objectFit: 'cover',
@@ -76145,7 +76021,12 @@ function (_Component) {
             paddingBottom: 5
           }
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", {
-          className: "card-title"
+          className: "card-title",
+          style: {
+            whiteSpace: 'nowrap',
+            maxWidth: '100%',
+            overflow: 'hidden'
+          }
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, deputado.nome_eleitoral))))));
       }))));
     }
@@ -76421,7 +76302,7 @@ function (_Component) {
           },
           type: "button",
           className: "btn btn-success"
-        }, "Precisava", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
+        }, "Concordo", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
           icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faThumbsUp"],
           pull: "right",
           size: "lg"
@@ -76432,7 +76313,7 @@ function (_Component) {
           },
           type: "button",
           className: "btn btn-outline-danger"
-        }, "N\xE3o Precisava", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
+        }, "N\xE3o Concordo", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
           icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faThumbsDown"],
           pull: "right",
           size: "lg"
@@ -76455,7 +76336,7 @@ function (_Component) {
           },
           type: "button",
           className: "btn btn-outline-success"
-        }, "Precisava", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
+        }, "Concordo", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
           icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faThumbsUp"],
           pull: "right",
           size: "lg"
@@ -76466,7 +76347,7 @@ function (_Component) {
           },
           type: "button",
           className: "btn btn-danger"
-        }, "N\xE3o Precisava", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
+        }, "N\xE3o Concordo", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
           icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faThumbsDown"],
           pull: "right",
           size: "lg"
@@ -76491,7 +76372,7 @@ function (_Component) {
           },
           type: "button",
           className: "btn btn-outline-success"
-        }, "Precisava", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
+        }, "Concordo", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
           icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faThumbsUp"],
           pull: "right",
           size: "lg"
@@ -76504,7 +76385,7 @@ function (_Component) {
           },
           type: "button",
           className: "btn btn-outline-danger"
-        }, "N\xE3o Precisava", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
+        }, "N\xE3o Concordo", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
           icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faThumbsDown"],
           pull: "right",
           size: "lg"
@@ -76557,7 +76438,7 @@ function (_Component) {
         className: "row justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
         className: "rounded float-left",
-        src: "https://www.camara.leg.br/internet/deputado/bandep/".concat(deputado.id, ".jpg"),
+        src: deputado.url_foto,
         style: {
           width: 140,
           height: 190
@@ -77009,49 +76890,53 @@ function (_Component) {
       this.state.ranking.sort(function (a, b) {
         return b.reacoes_positivas - a.reacoes_positivas;
       }).forEach(function (deputado, index) {
-        if (index < 3) {
-          lista.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-            key: index,
-            to: "/deputado-".concat(deputado.deputado_id, "-despesas"),
-            style: {
-              textDecoration: 'none'
-            }
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-            className: "list-group-item"
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, index + 1, "\xBA ", deputado.nome_deputado)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-            className: "row justify-content-center",
-            style: {
-              marginTop: 5
-            }
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-            className: "col-md-12"
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-            className: "rounded",
-            src: __webpack_require__("./public/img/deputados sync recursive ^\\.\\/.*\\.jpg$")("./".concat(deputado.deputado_id, ".jpg")),
-            alt: deputado.nome_eleitoral,
-            style: {
-              width: 110,
-              height: 150
-            }
-          }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-            disabled: true,
-            type: "button",
-            className: "btn btn-success btn-lg",
-            style: {
-              padding: 30,
-              marginLeft: 5
-            }
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-            className: "row justify-content-center"
-          }, deputado.reacoes_positivas), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-            className: "row justify-content-center"
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
-            icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faThumbsUp"],
-            pull: "right",
-            size: "lg"
-          }))))))));
-        }
-      });
+        // if (index < 3) {
+        lista.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          key: index,
+          to: "/deputado-".concat(deputado.deputado_id, "-despesas"),
+          style: {
+            textDecoration: 'none',
+            marginLeft: 5,
+            marginRight: 5,
+            marginBottom: 5,
+            marginTop: 5,
+            maxWidth: 250
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+          className: "list-group-item"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, index + 1, "\xBA ", deputado.nome_deputado)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center",
+          style: {
+            marginTop: 5
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-12"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: deputado.deputado_image,
+          className: "rounded",
+          style: {
+            width: 110,
+            height: 150
+          }
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          disabled: true,
+          type: "button",
+          className: "btn btn-success btn-lg",
+          style: {
+            padding: 30,
+            marginLeft: 5
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center"
+        }, deputado.reacoes_positivas), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
+          icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faThumbsUp"],
+          pull: "right",
+          size: "lg"
+        }))))))));
+      } // }
+      );
       return lista;
     }
   }, {
@@ -77061,49 +76946,96 @@ function (_Component) {
       this.state.ranking.sort(function (a, b) {
         return b.reacoes_negativas - a.reacoes_negativas;
       }).forEach(function (deputado, index) {
-        if (index < 3) {
-          lista.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-            key: index,
-            to: "/deputado-".concat(deputado.deputado_id, "-despesas"),
-            style: {
-              textDecoration: 'none'
-            }
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-            className: "list-group-item"
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, index + 1, "\xBA ", deputado.nome_deputado)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-            className: "row justify-content-center",
-            style: {
-              marginTop: 5
-            }
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-            className: "col-md-12"
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-            className: "rounded",
-            src: __webpack_require__("./public/img/deputados sync recursive ^\\.\\/.*\\.jpg$")("./".concat(deputado.deputado_id, ".jpg")),
-            alt: deputado.nome_eleitoral,
-            style: {
-              width: 110,
-              height: 150
-            }
-          }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-            disabled: true,
-            type: "button",
-            className: "btn btn-danger btn-lg",
-            style: {
-              padding: 30,
-              marginLeft: 5
-            }
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-            className: "row justify-content-center"
-          }, deputado.reacoes_negativas), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-            className: "row justify-content-center"
-          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
-            icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faThumbsDown"],
-            pull: "right",
-            size: "lg"
-          }))))))));
-        }
-      });
+        // if (index < 3) {
+        lista.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          key: index,
+          to: "/deputado-".concat(deputado.deputado_id, "-despesas"),
+          style: {
+            textDecoration: 'none',
+            marginLeft: 5,
+            marginRight: 5,
+            marginBottom: 5,
+            marginTop: 5,
+            maxWidth: 250
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+          className: "list-group-item"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, index + 1, "\xBA ", deputado.nome_deputado)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center",
+          style: {
+            marginTop: 5
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-12"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: deputado.deputado_image,
+          className: "rounded",
+          alt: deputado.nome_eleitoral,
+          style: {
+            width: 110,
+            height: 150
+          }
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          disabled: true,
+          type: "button",
+          className: "btn btn-danger btn-lg",
+          style: {
+            padding: 30,
+            marginLeft: 5
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center"
+        }, deputado.reacoes_negativas), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
+          icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faThumbsDown"],
+          pull: "right",
+          size: "lg"
+        }))))))));
+      } // }
+      );
+      return lista;
+    }
+  }, {
+    key: "rankingDespesas",
+    value: function rankingDespesas() {
+      var lista = [];
+      this.state.ranking.sort(function (a, b) {
+        return b.qtd_despesas - a.qtd_despesas;
+      }).forEach(function (deputado, index) {
+        // if (index < 3) {
+        lista.push(react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          key: index,
+          to: "/deputado-".concat(deputado.deputado_id, "-despesas"),
+          style: {
+            textDecoration: 'none',
+            marginLeft: 5,
+            marginRight: 5,
+            marginBottom: 5,
+            marginTop: 5,
+            maxWidth: 250
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+          className: "list-group-item"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("strong", null, index + 1, "\xBA ", deputado.nome_deputado)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row justify-content-center",
+          style: {
+            marginTop: 5
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-12"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: deputado.deputado_image,
+          className: "rounded",
+          alt: deputado.nome_eleitoral,
+          style: {
+            width: 110,
+            height: 150,
+            marginBottom: 10
+          }
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, deputado.qtd_despesas, " Despesas")))));
+      } // }
+      );
       return lista;
     }
   }, {
@@ -77131,24 +77063,70 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body text-center"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+        style: {
+          paddingBottom: 5
+        }
+      }, "Ranking de Despesas"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row justify-content-around"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-md-3"
+        className: "col-md-12"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        className: "list-group",
+        style: {
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          flexWrap: 'wrap'
+        }
+      }, this.rankingDespesas()))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card",
+        style: {
+          marginTop: '1%',
+          marginBottom: '2%'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-body text-center"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
         style: {
           paddingBottom: 5
         }
-      }, "Ranking Positivo"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        className: "list-group"
-      }, this.rankingPositivo())), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-md-3"
+      }, "Ranking de Aprova\xE7\xE3o do P\xFAblico"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row justify-content-around"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col-md-12"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        className: "list-group",
+        style: {
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          flexWrap: 'wrap'
+        }
+      }, this.rankingPositivo()))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card",
+        style: {
+          marginTop: '1%',
+          marginBottom: '2%'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-body text-center"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
         style: {
           paddingBottom: 5
         }
-      }, "Ranking Negativo"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        className: "list-group"
+      }, "Ranking de Desaprova\xE7\xE3o do P\xFAblico"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row justify-content-around"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col-md-12"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        className: "list-group",
+        style: {
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          flexWrap: 'wrap'
+        }
       }, this.rankingNegativo()))))));
     }
   }]);

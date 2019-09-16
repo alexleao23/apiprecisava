@@ -30,10 +30,12 @@ class DeputadosController extends Controller
           }
           array_push($todasReacoes, [
               'deputado_id' => $deputado->id,
+              'deputado_image' => $deputado->url_foto,
               'nome_deputado' => $deputado->nome_eleitoral,
               'reacoes_positivas' => count($reacoesPositivas),
               'reacoes_negativas' => count($reacoesNegativas),
-              'total_reacoes' => count($reacoes)
+              'total_reacoes' => count($reacoes),
+              'qtd_despesas' => $deputado->despesas()->count()
             ]);
         }
       return response()->json($todasReacoes);

@@ -50,9 +50,9 @@ class Ranking extends Component {
     this.state.ranking.sort((a, b) =>
       b.reacoes_positivas - a.reacoes_positivas
     ).forEach((deputado, index) => {
-      if (index < 3) {
+      // if (index < 3) {
         lista .push(
-          <Link key={index} to={`/deputado-${deputado.deputado_id}-despesas`} style={{ textDecoration: 'none' }}>
+          <Link key={index} to={`/deputado-${deputado.deputado_id}-despesas`} style={{ textDecoration: 'none', marginLeft: 5, marginRight: 5, marginBottom: 5, marginTop: 5, maxWidth: 250 }}>
             <li className="list-group-item">
               <h6>
                 <strong>
@@ -61,7 +61,7 @@ class Ranking extends Component {
               </h6>
               <div className="row justify-content-center" style={{ marginTop: 5 }}>
                 <div className="col-md-12">
-                  <img className="rounded" src={require(`../../../public/img/deputados/${deputado.deputado_id}.jpg`)} alt={deputado.nome_eleitoral} style={{ width: 110, height: 150 }} />
+                  <img src={deputado.deputado_image} className="rounded" style={{ width: 110, height: 150 }} />
                   <button
                     disabled type="button"
                     className="btn btn-success btn-lg"
@@ -84,7 +84,8 @@ class Ranking extends Component {
           </Link>
         )
       }
-    });
+    // }
+    );
     return lista
   }
 
@@ -93,9 +94,9 @@ class Ranking extends Component {
     this.state.ranking.sort((a, b) =>
       b.reacoes_negativas - a.reacoes_negativas
     ).forEach((deputado, index) => {
-      if (index < 3) {
+      // if (index < 3) {
         lista .push(
-          <Link key={index} to={`/deputado-${deputado.deputado_id}-despesas`} style={{ textDecoration: 'none' }}>
+          <Link key={index} to={`/deputado-${deputado.deputado_id}-despesas`} style={{ textDecoration: 'none', marginLeft: 5, marginRight: 5, marginBottom: 5, marginTop: 5, maxWidth: 250 }}>
             <li className="list-group-item">
               <h6>
                 <strong>
@@ -105,8 +106,8 @@ class Ranking extends Component {
               <div className="row justify-content-center" style={{ marginTop: 5 }}>
                 <div className="col-md-12">
                   <img
+                    src={deputado.deputado_image}
                     className="rounded"
-                    src={require(`../../../public/img/deputados/${deputado.deputado_id}.jpg`)}
                     alt={deputado.nome_eleitoral}
                     style={{ width: 110, height: 150 }}
                   />
@@ -132,7 +133,44 @@ class Ranking extends Component {
           </Link>
         )
       }
-    });
+    // }
+    );
+    return lista
+  }
+
+  rankingDespesas() {
+    let lista = []
+    this.state.ranking.sort((a, b) =>
+      b.qtd_despesas - a.qtd_despesas
+    ).forEach((deputado, index) => {
+      // if (index < 3) {
+        lista.push(
+          <Link key={index} to={`/deputado-${deputado.deputado_id}-despesas`} style={{ textDecoration: 'none', marginLeft: 5, marginRight: 5, marginBottom: 5, marginTop: 5, maxWidth: 250 }}>
+            <li className="list-group-item">
+              <h6>
+                <strong>
+                  {index + 1}º {deputado.nome_deputado}
+                </strong>
+              </h6>
+              <div className="row justify-content-center" style={{ marginTop: 5 }}>
+                <div className="col-md-12">
+                  <img
+                    src={deputado.deputado_image}
+                    className="rounded"
+                    alt={deputado.nome_eleitoral}
+                    style={{ width: 110, height: 150, marginBottom: 10 }}
+                  />
+                </div>
+                <h4>
+                  {deputado.qtd_despesas} Despesas
+                </h4>
+              </div>
+            </li>
+          </Link>
+        )
+      }
+    // }
+    );
     return lista
   }
 
@@ -154,20 +192,40 @@ class Ranking extends Component {
         <Header/>
         <div className="card" style={{ marginTop: '1%', marginBottom: '2%' }}>
           <div className="card-body text-center">
+            <h3 style={{ paddingBottom: 5 }}>
+              Ranking de Despesas
+            </h3>
             <div className="row justify-content-around">
-              <div className="col-md-3">
-                <h3 style={{ paddingBottom: 5 }}>
-                  Ranking Positivo
-                </h3>
-                <ul className="list-group">
+              <div className="col-md-12">
+                <ul className="list-group" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  {this.rankingDespesas()}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="card" style={{ marginTop: '1%', marginBottom: '2%' }}>
+          <div className="card-body text-center">
+            <h3 style={{ paddingBottom: 5 }}>
+              Ranking de Aprovação do Público
+            </h3>
+            <div className="row justify-content-around">
+              <div className="col-md-12">
+                <ul className="list-group" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap' }}>
                   {this.rankingPositivo()}
                 </ul>
               </div>
-              <div className="col-md-3">
-                <h3 style={{ paddingBottom: 5 }}>
-                  Ranking Negativo
-                </h3>
-                <ul className="list-group">
+            </div>
+          </div>
+        </div>
+        <div className="card" style={{ marginTop: '1%', marginBottom: '2%' }}>
+          <div className="card-body text-center">
+            <h3 style={{ paddingBottom: 5 }}>
+              Ranking de Desaprovação do Público
+            </h3>
+            <div className="row justify-content-around">
+              <div className="col-md-12">
+                <ul className="list-group" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap' }}>
                   {this.rankingNegativo()}
                 </ul>
               </div>

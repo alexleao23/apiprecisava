@@ -28,6 +28,7 @@ class CreateDeputadosTable extends Migration
             $table->string('sigla_partido');
             $table->string('condicao_eleitoral');
             $table->string('url_foto');
+            $table->timestamps();
         });
     }
 

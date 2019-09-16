@@ -184,7 +184,7 @@ class ListaDespesasDeputado extends Component {
       return (
         <div>
           <button disabled style={{ margin: 2 }} type="button" className='btn btn-success'>
-            Precisava
+            Concordo
             <FontAwesomeIcon
               icon={faThumbsUp}
               pull="right"
@@ -192,7 +192,7 @@ class ListaDespesasDeputado extends Component {
             />
           </button>
           <button disabled style={{ margin: 2 }} type="button" className='btn btn-outline-danger'>
-            Não Precisava
+            Não Concordo
             <FontAwesomeIcon
               icon={faThumbsDown}
               pull="right"
@@ -213,7 +213,7 @@ class ListaDespesasDeputado extends Component {
       return (
         <div>
           <button disabled style={{ margin: 2 }} type="button" className='btn btn-outline-success'>
-            Precisava
+            Concordo
             <FontAwesomeIcon
               icon={faThumbsUp}
               pull="right"
@@ -221,7 +221,7 @@ class ListaDespesasDeputado extends Component {
             />
           </button>
           <button disabled style={{ margin: 2 }} type="button" className='btn btn-danger'>
-            Não Precisava
+            Não Concordo
             <FontAwesomeIcon
               icon={faThumbsDown}
               pull="right"
@@ -242,7 +242,7 @@ class ListaDespesasDeputado extends Component {
       return (
         <div>
           <button onClick={()=>this.handleReacao(despesa.id, 1)} style={{ margin: 2 }} type="button" className='btn btn-outline-success'>
-            Precisava
+            Concordo
             <FontAwesomeIcon
               icon={faThumbsUp}
               pull="right"
@@ -250,7 +250,7 @@ class ListaDespesasDeputado extends Component {
             />
           </button>
           <button onClick={()=>this.handleReacao(despesa.id, 0)} style={{ margin: 2 }} type="button" className='btn btn-outline-danger'>
-            Não Precisava
+            Não Concordo
             <FontAwesomeIcon
               icon={faThumbsDown}
               pull="right"
@@ -291,7 +291,10 @@ class ListaDespesasDeputado extends Component {
           <div className="card" style={{ marginTop: '1%', marginBottom: '2%' }}>
             <div className="card-header" style={{ padding: '2%' }}>
               <div className="row justify-content-center">
-              <img className="rounded float-left" src={`https://www.camara.leg.br/internet/deputado/bandep/${deputado.id}.jpg`} style={{ width: 140, height: 190 }} />
+              <img
+                className="rounded float-left"
+                src={deputado.url_foto}
+                style={{ width: 140, height: 190 }} />
                 <div className="table-responsive-md" style={{ paddingLeft: '2%' }}>
                   <table className="table-borderless">
                     <tbody>

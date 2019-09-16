@@ -24,8 +24,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('update:deputados')->yearly();
+        $schedule->command('update:despesas')->monthly();
+        // $schedule->command('inspire')->hourly();
     }
 
     /**

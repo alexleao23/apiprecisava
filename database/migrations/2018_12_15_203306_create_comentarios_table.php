@@ -18,7 +18,7 @@ class CreateComentariosTable extends Migration
             $table->unsignedInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('users');
             $table->unsignedInteger('despesa_id');
-            $table->foreign('despesa_id')->references('id')->on('despesa_deputados');
+            // $table->foreign('despesa_id')->references('id')->on('despesa_deputados');
             $table->longText('descricao');
             $table->timestamps();
         });

@@ -58,13 +58,13 @@ class ListaDeputados extends Component {
                 <div className="col-sm-6 col-md-3" key={deputado.id}>
                   <Link to={`/deputado-${deputado.id}-despesas`} style={{ textDecoration: 'none' }}>
                     <div className="card text-center" style={{ marginBottom: '10%', backgroundColor: '#f5f5f5', borderRadius: '5px', boxShadow: '7px 10px #e8e8e8' }}>
-                      <div className="card-body">
+                      <div className="card-body" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <img
-                        src={`https://www.camara.leg.br/internet/deputado/bandep/${deputado.id}.jpg`}
+                          src={deputado.url_foto}
                           alt={deputado.nome_eleitoral}
                           style={{ objectFit: 'cover', borderRadius: '50%', width: 100, height: 100, paddingBottom: 5 }}
                           />
-                        <h6 className="card-title">
+                        <h6 className="card-title" style={{ whiteSpace: 'nowrap', maxWidth: '100%', overflow: 'hidden' }}>
                           <strong>{deputado.nome_eleitoral}</strong>
                         </h6>
                       </div>
